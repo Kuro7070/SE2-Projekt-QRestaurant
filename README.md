@@ -1,61 +1,104 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Git auf Deutsch
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Die tägliche Kommunikation in deutschen Entwicklungsteams, die `git`
+(übersetzt: `Schwachkopf` oder `Depp`) anwenden, ist oft das feinste Denglish.
+_"Kannst du bitte pullen"_ oder _"Hast du gepusht"_ sind nur zwei
+der oft seltsam klingenden Konstruktionen.
 
-## About Laravel
+Git auf Deutsch schafft Abhilfe!
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Vorschläge
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Es folgen zwei Tabellen mit Vorschlägen für den täglichen Gebrauch.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+| Verb        | Aktueller Gebrauch | Vorschlag             |
+|-------------|--------------------|-----------------------|
+| init        | initten            | eröffnen              |
+| add         | adden              | hinzufügen            |
+| blame       | blamen             | beschuldigen          |
+| pull        | pullen             | ziehen                |
+| push        | pushen             | schieben              |
+| clone       | clonen             | nachmachen            |
+| fetch       | fetchen            | holen                 |
+| branch      | branchen           | abzweigen             |
+| commit      | commiten           | festlegen             |
+| rebase      | rebasen            | (neu) erden           |
+| diff        | diffen             | unterscheiden         |
+| merge       | mergen             | zusammenführen        |
+| fork        | forken             | abspalten             |
+| stash       | stashen            | verstecken            |
+| tag         | taggen             | markieren             |
+| cherry-pick | cherry-picken      | Rosinen herauspicken  |
+| checkout    | checkouten         | nehmen                |
+| squash      | squashen           | quetschen             |
 
-## Learning Laravel
+Hier noch einige (zum Teil nicht ganz ernste)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+| Substantiv    | Aktueller Gebrauch | Vorschlag                  |
+|---------------|--------------------|----------------------------|
+| git           | git                | Depp                       |
+| github        | github             | Deppendrehkreuz            |
+| gitlab        | gitlab             | Deppenlabor                |
+| gitea         | gitea              | Deppentee                  |
+| blame         | blame              | Deppenbeschuldigung        |
+| bitbucket     | bitbucket          | Gebisseimer                |
+| repository    | repo               | Lagerstätte                |
+| branch        | branch             | Zweig                      |
+| commit        | commit             | Übergabe                   |
+| log           | log                | Tagebuch                   |
+| pull request  | pull request       | Ziehbegehren               |
+| merge request | merge request      | Antrag auf Zusammenführung |
+| stash         | stash              | Versteck                   |
+| status        | status             | Zustand                    |
+| tag           | tag                | Markierung                 |
+| origin        | origin             | Ursprung                   |
+| master        | master             | Meister                    |
+| main          | main               | Haupt                      |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Beispiele
 
-## Laravel Sponsors
+    - Kannst du den Zweig, den ich gerade umgeschrieben hab, ziehen und zum Deppendrehkreuz drücken?
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+    - Dafür habe ich eine neue Lagerstätte eröffnet, mach sie nach und nimm dir den Entwicklungszweig.
 
-### Premium Partners
+    - Nein, drücke das gleich zum Meister im Ursprung!
+    
+    - Du kannst in der Deppenbeschuldigung sehen, wer das geändert hat.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+    - Ich hab gerade abgezweigt und die Änderungen aus meinem Versteck übergeben.
 
-## Contributing
+    - Mach ein Ziehbegehren, wenn du mit der Vereinigung fertig bist!
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    - Am besten wir picken uns die Rosinen aus dem Hauptzweig heraus.
 
-## Code of Conduct
+    - Gabeln Sie auf Deppendrehkreuz!
+    
+    - Wenn du fertig bist, dann kannst du das Ziehbegehren sofort quetschen und zusammenführen.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Depp auf Deutsch anwenden
 
-## Security Vulnerabilities
+Wer den nächsten Schritt machen will, hier eine Anleitung, die Depp auf Deutsch in Deine Konsole bringt. Da Depp keine Umlaute zulässt, müssen wir in den Befehlen leider darauf verzichten. Nimm folgende Änderungen in deiner `~/.gitconfig` vor:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    git config --global alias.eroeffne init
+    git config --global alias.machnach clone
+    git config --global alias.zieh pull
+    git config --global alias.fueghinzu add
+    git config --global alias.drueck push
+    git config --global alias.pfusch push --force
+    git config --global alias.zweig branch
+    git config --global alias.verzweige branch
+    git config --global alias.uebergib commit
+    git config --global alias.erde rebase
+    git config --global alias.unterscheide diff
+    git config --global alias.vereinige merge
+    git config --global alias.bunkere stash
+    git config --global alias.markiere tag
+    git config --global alias.nimm checkout
+    git config --global alias.tagebuch log
+    git config --global alias.zustand status
+    git config --global alias.beschuldige blame
 
-## License
+Und füge die folgende Zeile zu deiner `~/.bashrc` (oder das Äquivalent auf deinem Betriebssystem) hinzu:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    alias depp=git
+https://github.com/danielauener/git-auf-deutsch.git
