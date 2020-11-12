@@ -3,7 +3,7 @@
 @import 'tailwindcss/utilities';
 @import 'bootstrap.min.css';
 
-html {
+html, body {
     position: relative;
     margin: 0;
     height: 100%;
@@ -11,28 +11,25 @@ html {
 }
 
 body {
-    overflow-y: overlay;
     display: flex;
     flex-direction: column;
     min-height: 100%;
     /*margin-bottom: 60px; !* Margin bottom by footer height *!*/
-    background: url("../img/login-bg.jpg") no-repeat center center fixed;
+    background: url("../img/bg.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     flex: auto;
     scrollbar-width: 2px;
-}
+    overflow: hidden;
 
-nav {
-    /*background: linear-gradient(180deg, white 50%, rgba(0,0,0,0));*/
-    background-color: white;
 }
 
 main {
     -webkit-overflow-scrolling: touch;
     flex: auto;
+    overflow-y: scroll;
 }
 
 .footer {
@@ -51,47 +48,55 @@ main {
     height: 5px;
 }
 
-::-webkit-scrollbar-button {    cursor: grab;
+::-webkit-scrollbar-button {
+    cursor: grab;
 
     width: 0px;
     height: 0px;
 }
 
-::-webkit-scrollbar-thumb {    cursor: grab;
+::-webkit-scrollbar-thumb {
+    cursor: grab;
 
     background: #e1e1e1;
     border: 0px none #ffffff;
     border-radius: 0px;
 }
 
-::-webkit-scrollbar-thumb:hover {    cursor: grab;
+::-webkit-scrollbar-thumb:hover {
+    cursor: grab;
 
     background: #e1e1e1;
 }
 
-::-webkit-scrollbar-thumb:active {    cursor: grab;
+::-webkit-scrollbar-thumb:active {
+    cursor: grab;
 
     background: #666666;
 }
 
-::-webkit-scrollbar-track {    cursor: grab;
+::-webkit-scrollbar-track {
+    cursor: grab;
 
     background: #666666;
     border: 0px none #ffffff;
     border-radius: 0px;
 }
 
-::-webkit-scrollbar-track:hover {    cursor: grab;
+::-webkit-scrollbar-track:hover {
+    cursor: grab;
 
     background: #000000;
 }
 
-::-webkit-scrollbar-track:active {    cursor: grab;
+::-webkit-scrollbar-track:active {
+    cursor: grab;
 
     background: #000000;
 }
 
-::-webkit-scrollbar-corner {    cursor: grab;
+::-webkit-scrollbar-corner {
+    cursor: grab;
 
     background: transparent;
 }
@@ -104,4 +109,67 @@ main {
     box-sizing: border-box;
     -webkit-backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
+}
+
+#backdrop{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1050;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: all 0.3s;
+}
+
+.sidenav a {
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: all 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    font-size: 50px;
+    margin-right: 50px;
+}
+
+#main, main {
+    margin-right: 0;
+    transition: all .3s;
+}
+
+#navx {
+    opacity: 1;
+    transition: all .3s;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
 }
