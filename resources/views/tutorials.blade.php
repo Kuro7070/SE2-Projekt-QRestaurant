@@ -1,6 +1,6 @@
 <div id="tutorials" class="col-sm-12 col-md-9 col-lg-6">
 
-    <div class="card">
+    <div class="card bg-success">
         <div class="card-body">
             <h2 class="card-title">Tutorials</h2>
             {{--                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>--}}

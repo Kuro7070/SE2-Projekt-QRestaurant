@@ -32,6 +32,16 @@ main {
     overflow-y: scroll;
 }
 
+a {
+    font-weight: 100;
+    color: #ffffff;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
 .footer {
     bottom: 0;
     width: 100%;
@@ -111,7 +121,7 @@ main {
     -webkit-font-smoothing: antialiased;
 }
 
-#backdrop{
+#backdrop {
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -161,6 +171,7 @@ main {
 }
 
 .nav-link {
+    transition: all .5s;
     cursor: pointer;
 }
 
@@ -173,3 +184,4 @@ main {
         font-size: 18px;
     }
 }
+

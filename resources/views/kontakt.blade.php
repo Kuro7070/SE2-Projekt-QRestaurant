@@ -1,7 +1,7 @@
 <div id="kontakt" class="col-sm-12 col-md-9 col-lg-6">
 
     <div class="card">
-        <div class="card-body">
+        <div class="card-body bg-danger">
             <h2 class="card-title">Kontakt</h2>
             {{--                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>--}}
             <p class="card-text">
