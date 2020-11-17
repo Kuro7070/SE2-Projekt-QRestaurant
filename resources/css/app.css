@@ -129,6 +129,19 @@ a:hover {
     transition: all 0.3s;
 }
 
+input.rounder-borders {
+    border-radius: 10px;
+}
+
+textarea.rounder-borders {
+    border-radius: 10px;
+}
+
+.bg-warm-grey {
+    background: #545454;
+    color: #fff;
+}
+
 .sidenav {
     height: 100%;
     width: 0;
