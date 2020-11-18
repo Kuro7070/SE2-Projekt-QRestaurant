@@ -130,11 +130,32 @@ a:hover {
 }
 
 input.rounder-borders {
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 textarea.rounder-borders {
-    border-radius: 10px;
+    border-radius: 9px;
+}
+
+.form-control:focus {
+    border-color: #ebebeb !important;
+    box-shadow: 0 0 0 0.3rem rgba(255,255,255,.25) !important;
+}
+
+.bg-button-color {
+    background: rgba(235,235,235,0.1);
+    color: #fff;
+    font-weight: bold;
+}
+
+.bg-button-color:hover {
+    background: rgba(235,235,235,0.5);
+    color: rgba(0,0,0,0.8);
+}
+
+.bg-button-color:active {
+    background: rgba(235,235,235,0.3);
+    color: rgba(0,0,0,0.8);
 }
 
 .bg-warm-grey {
