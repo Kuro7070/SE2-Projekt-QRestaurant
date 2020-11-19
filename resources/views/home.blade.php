@@ -6,7 +6,7 @@
     </div>
     <div class="row h-50">
         <div class="col-4 p-5">
-            <div class="card rounded-lg h-100 w-100 position-relative">
+            <div class="card h-100 w-100 position-relative" style="border-radius: 20px">
                 <div class="h-75">
                 </div>
                 <div class="h-25 text-center text-black-50" style="font-size: 32px ">
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="col-4 p-5">
-            <div class="card rounded-lg h-100 w-100 position-relative">
+            <div class="card h-100 w-100 position-relative" style="border-radius: 20px">
                 <div class="h-75">
                 </div>
                 <div class="h-25 text-center text-black-50" style="font-size: 32px ">
@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="col-4 p-5">
-            <div class="card rounded-lg h-100 w-100 position-relative">
+            <div class="card h-100 w-100 position-relative" style="border-radius: 20px">
                 <div class="h-75">
                 </div>
                 <div class="h-25 text-center text-black-50" style="font-size: 32px ">
