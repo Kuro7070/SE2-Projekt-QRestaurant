@@ -1,6 +1,6 @@
 <div id="kontakt" class="col-sm-12 col-md-9 col-lg-6">
 
-    <div class="card bg-warm-grey border-0 mt-5"> {{--after changing backgrounf --> card transparent--}}
+    <div class="card bg-transparent-black border-0 mt-5"> {{--after changing backgrounf --> card transparent--}}
         <div class="card-body mt-3 ml-4">
             <h1 class="card-title font-weight-bold display-4 mb-3">Kontakt</h1>
 
