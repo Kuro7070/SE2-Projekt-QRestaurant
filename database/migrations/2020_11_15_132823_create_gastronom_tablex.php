@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGastronomTable extends Migration
+class CreateGastronomTablex extends Migration
 {
     /**
      * Run the migrations.
@@ -14,14 +14,15 @@ class CreateGastronomTable extends Migration
     public function up()
     {
         Schema::create('gastronom', function (Blueprint $table) {
-            $table->increments('id')->primary();
+            $table->bigIncrements('id');
             $table->string('email')->unique()->nullable();
             $table->string('passwort')->nullable();
             $table->string('nachname')->nullable();
             $table->string('vorname')->nullable();
             $table->string('adresse')->nullable();
             $table->string('telefonnummer')->nullable();
-            $table->foreignId('speise_id')->references('id')->on('speisekarte');
+            $table->unsignedBigInteger('speise_id');
+            $table->foreign('speise_id')->references('id')->on('speisekarte');
         });
     }
 

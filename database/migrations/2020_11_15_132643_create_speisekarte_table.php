@@ -14,7 +14,7 @@ class CreateSpeisekarteTable extends Migration
     public function up()
     {
         Schema::create('speisekarte', function (Blueprint $table) {
-            $table->increments('id')->primary();
+            $table->bigIncrements('id');
             $table->binary('karte'); #binary equivalent zu blob
         });
     }

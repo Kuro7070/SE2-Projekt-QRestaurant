@@ -14,7 +14,9 @@ class CreateGastronomHatKundeCoronaTable extends Migration
     public function up()
     {
         Schema::create('gastronom_hat_kunde_corona', function (Blueprint $table) {
-            $table->primary(['speise_id', 'corona_id']);
+            $table->primary(['corona_id', 'gastro_id']);
+            $table->unsignedBigInteger('corona_id');
+            $table->unsignedBigInteger('gastro_id');
             $table-> foreign('corona_id')-> references('id')->on('kunde_corona');
             $table-> foreign('gastro_id')-> references('id')->on('gastronom');
 
