@@ -15,7 +15,7 @@ class CreateSpeisekarteTable extends Migration
     {
         Schema::create('speisekarte', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->mediumText('karte'); #binary equivalent zu blob
+            $table->mediumText('karte')->nullable(); #binary equivalent zu blob
         });
     }
 

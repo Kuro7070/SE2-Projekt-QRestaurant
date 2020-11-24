@@ -15,13 +15,13 @@ class CreateKundeCoronaTable extends Migration
     {
         Schema::create('kunde_corona', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('email')->unique()->nullable();
-            $table->string('nachname')->nullable();
-            $table->string('vorname')->nullable();
-            $table->string('adresse')->nullable();
-            $table->string('telefonnummer')->nullable();
-            $table->timestamp('datum')->nullable();
-            $table->string('verbleib')->nullable();
+            $table->string('email')->unique()->nullable(false);
+            $table->string('nachname')->nullable(false);
+            $table->string('vorname')->nullable(false);
+            $table->string('adresse')->nullable(false);
+            $table->string('telefonnummer')->nullable(false);
+            $table->timestamp('datum')->nullable(false);
+            $table->string('verbleib')->nullable(false);
 
         });
     }

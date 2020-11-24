@@ -15,8 +15,8 @@ class CreateGastronomHatKundeCoronaTable extends Migration
     {
         Schema::create('gastronom_hat_kunde_corona', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('corona_id');
-            $table->unsignedBigInteger('gastro_id');
+            $table->unsignedBigInteger('corona_id')->nullable();
+            $table->unsignedBigInteger('gastro_id')->nullable();
             $table-> foreign('corona_id')-> references('id')->on('kunde_corona');
             $table-> foreign('gastro_id')-> references('id')->on('gastronom');
 

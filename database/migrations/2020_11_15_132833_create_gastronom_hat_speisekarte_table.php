@@ -15,8 +15,8 @@ class CreateGastronomHatSpeisekarteTable extends Migration
     {
         Schema::create('gastronom_hat_speisekarte', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('speise_id');
-            $table->unsignedBigInteger('gastro_id');
+            $table->unsignedBigInteger('speise_id')->nullable();
+            $table->unsignedBigInteger('gastro_id')->nullable();
             $table->foreign('speise_id')->references('id')->on('speisekarte');
             $table->foreign('gastro_id')->references('id')->on('gastronom');
 

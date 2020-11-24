@@ -15,12 +15,12 @@ class CreateGastronomTablex extends Migration
     {
         Schema::create('gastronom', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('email')->unique()->nullable();
-            $table->string('passwort')->nullable();
-            $table->string('nachname')->nullable();
-            $table->string('vorname')->nullable();
-            $table->string('adresse')->nullable();
-            $table->string('telefonnummer')->nullable();
+            $table->string('email')->unique()->nullable(false);
+            $table->string('passwort')->nullable(false);
+            $table->string('nachname')->nullable(false);
+            $table->string('vorname')->nullable(false);
+            $table->string('adresse')->nullable(false);
+            $table->string('telefonnummer')->nullable(false);
             $table->unsignedBigInteger('speise_id')->nullable();
             $table->foreign('speise_id')->references('id')->on('speisekarte');
         });
