@@ -16,7 +16,6 @@ class CreateKundeCoronaTable extends Migration
         Schema::create('kunde_corona', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('email')->unique()->nullable();
-            $table->string('passwort')->nullable();
             $table->string('nachname')->nullable();
             $table->string('vorname')->nullable();
             $table->string('adresse')->nullable();

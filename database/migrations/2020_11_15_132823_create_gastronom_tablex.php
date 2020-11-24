@@ -21,7 +21,7 @@ class CreateGastronomTablex extends Migration
             $table->string('vorname')->nullable();
             $table->string('adresse')->nullable();
             $table->string('telefonnummer')->nullable();
-            $table->unsignedBigInteger('speise_id');
+            $table->unsignedBigInteger('speise_id')->nullable();
             $table->foreign('speise_id')->references('id')->on('speisekarte');
         });
     }
