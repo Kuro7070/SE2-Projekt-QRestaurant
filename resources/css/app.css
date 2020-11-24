@@ -129,6 +129,49 @@ a:hover {
     transition: all 0.3s;
 }
 
+/* BEGIN OWN CSS CHANGES --------------------------------  */
+
+input.rounder-borders {
+    border-radius: 7px;
+}
+
+textarea.rounder-borders {
+    border-radius: 9px;
+}
+
+.form-control:focus {
+    border-color: #ebebeb !important;
+    box-shadow: 0 0 0 0.3rem rgba(255,255,255,.25) !important;
+}
+
+.bg-button-color {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-weight: bold;
+}
+
+.bg-button-color:hover {
+    background: rgba(255,255,255,0.5);
+    color: rgba(0,0,0,0.8);
+}
+
+.bg-button-color:active {
+    background: rgba(255,255,255,0.3);
+    color: rgba(0,0,0,0.8);
+}
+
+.bg-warm-grey {
+    background: #545454;
+    color: #fff;
+}
+
+.bg-transparent-black {
+    background: rgba(0,0,0,0.6) !important;
+    color: #fff !important;
+}
+
+/* END OWN CSS CHANGES -------------------------------- */
+
 .sidenav {
     height: 100%;
     width: 0;
