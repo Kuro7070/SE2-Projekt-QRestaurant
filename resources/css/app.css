@@ -139,15 +139,26 @@ textarea.rounder-borders {
     border-radius: 9px;
 }
 
-.form-control:focus {
+.form-control, .form-control-lg {
+    border: none;
+    transition: all .5s;
+}
+.form-control:focus, .form-control-lg:focus {
     border-color: #ebebeb !important;
     box-shadow: 0 0 0 0.3rem rgba(255,255,255,.25) !important;
+    outline: none;
+    background-color: lightgray;
+
+}
+.form-control:hover, .form-control-lg:hover {
+    background-color: lightgray;
 }
 
 .bg-button-color {
     background: rgba(255,255,255,0.1);
     color: #fff;
     font-weight: bold;
+    transition: .5s all;
 }
 
 .bg-button-color:hover {
