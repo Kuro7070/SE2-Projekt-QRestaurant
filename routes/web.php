@@ -29,3 +29,5 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('users/{userid}',[\App\Http\Controllers\UserController::class, 'getUserById']);
 
 });
+
+Route::post('contact',[\App\Http\Controllers\ContactController::class, 'saveContact'])->name('kontakt');
