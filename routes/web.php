@@ -33,3 +33,4 @@ Route::group(['middleware' => ['auth']], function() {
 
 
 Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
+Route::any('/remove-file/{id}', [FileUpload::class, 'destroy'])->name('removePDF');

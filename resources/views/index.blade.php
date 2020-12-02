@@ -80,7 +80,7 @@
 </nav>
 
 <main data-spy="scroll" data-target="#navx" data-offset="100" id="main" role="main" class="container-fluid">
-
+    @include('speisekarte-upload')
     <div id="trigger1"></div>
     <div id="reveal1" class="row h-100">
         @include('home')
@@ -107,11 +107,13 @@
 <script src="../resources/js/debug.addIndicators.min.js"></script>
 <script src="../resources/js/reveal-content.js"></script>
 <script src="../resources/js/bs-custom-file-input.js"></script>
-<script>
-    $(document).ready(function() {
-        bsCustomFileInput.init()
-    });
+<script src="../resources/js/upload-file.js"></script>
 
+<script>
+    $('#my-modal').on('show.bs.modal', function (event) {
+        var myVal = $(event.relatedTarget).data('val');
+        $(this).find(".modal-body").text(myVal);
+    });
 </script>
 </body>
 </html>

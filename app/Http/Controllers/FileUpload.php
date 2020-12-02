@@ -18,7 +18,7 @@ class FileUpload extends Controller
         ];
 
         $customMessages = [
-            'required' => 'Das Feld :Attribute darf nicht leer sein.',
+            'required' => 'Das Uploadfeld darf nicht leer sein.',
             'mimes'    => "Bitte wählen Sie eine PDF-Datei aus.",
             'max'      => 'Die ausgewählte PDF-Datei ist zu groß. Die maximale Größe darf 2MB betragen.'
         ];
@@ -53,11 +53,21 @@ class FileUpload extends Controller
         foreach ($result as $menus) {
             array_push($codes, [
                 'qr'   => self::getQRUri(asset($menus->file_path)),
-                'path' => asset($menus->file_path)
+                'path' => asset($menus->file_path),
+                'id'   => $menus->id
             ]);
         }
         return $codes;
     }
+
+    public static function destroy(Request $request)
+    {
+        $id = $request['id'];
+        DB::table('files')->where('id', '=', $id)->delete();
+        return back()
+            ->with('delete-success', 'Speisekarte wurde erfolgreich gelöscht.');
+    }
+
 
     public static function getQRUri($url)
     {
