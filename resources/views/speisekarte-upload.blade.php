@@ -27,9 +27,12 @@
         </button>
     </form>
 {{--    <object data="{{ asset('storage/uploads/1606768801_aufgaben1u2.pdf') }}" type="application/pdf" width="100%" height="800px">--}}
-    <a href="{{ \App\Http\Controllers\FileUpload::getPDF() }}">DOWNLOAD</a>
+{{--    <a href="{{ \App\Http\Controllers\FileUpload::getPDF() }}">DOWNLOAD</a>--}}
 {{--    </object>--}}
-    {{ \App\Http\Controllers\FileUpload::getPDF() }}
+    @foreach (\App\Http\Controllers\FileUpload::getPDF() as $codes)
+        <a href="{{$codes['path']}}"><img src="{{$codes['qr']}}" alt=""></a>
+
+    @endforeach
 </div>
 
 

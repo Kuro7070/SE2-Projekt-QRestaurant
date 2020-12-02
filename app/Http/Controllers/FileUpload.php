@@ -49,13 +49,18 @@ class FileUpload extends Controller
 
         $result = DB::select($query);
 
+        $codes = [];
         foreach ($result as $menus) {
-
+            array_push($codes, [
+                'qr'   => self::getQRUri(asset($menus->file_path)),
+                'path' => asset($menus->file_path)
+            ]);
         }
-//        return asset('storage/uploads/1606768801_aufgaben1u2.pdf');
+        return $codes;
     }
-    
-    private function printQR($url){
-        return
+
+    public static function getQRUri($url)
+    {
+        return QrCodeGenerator::generateQRCode($url);
     }
 }

@@ -32,7 +32,7 @@ class QrCodeGenerator extends Controller
         $qrCode->setWriterOptions(['exclude_xml_declaration' => true]);
 
         header('Content-Type: ' . $qrCode->getContentType());
-        echo $qrCode->writeString();
+        return $qrCode->writeDataUri();
     }
 }
 
