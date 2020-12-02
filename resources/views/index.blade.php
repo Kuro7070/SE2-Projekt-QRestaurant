@@ -106,5 +106,12 @@
 <script src="../resources/js/ScrollMagic.min.js"></script>
 <script src="../resources/js/debug.addIndicators.min.js"></script>
 <script src="../resources/js/reveal-content.js"></script>
+<script src="../resources/js/bs-custom-file-input.js"></script>
+<script>
+    $(document).ready(function() {
+        bsCustomFileInput.init()
+    });
+
+</script>
 </body>
 </html>

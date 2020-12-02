@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileUpload;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +30,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('users/{userid}',[\App\Http\Controllers\UserController::class, 'getUserById']);
 
 });
+
+
+Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');

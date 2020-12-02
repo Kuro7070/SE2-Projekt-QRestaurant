@@ -228,3 +228,4 @@ textarea.rounder-borders {
     }
 }
 
+.custom-file-label::after { content: "Durchsuchen";}
