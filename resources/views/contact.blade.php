@@ -1,7 +1,10 @@
+<style>#contact-spinner {
+        display: none
+    }</style>
 <div id="kontakt" class="col-sm-12 col-md-9 col-lg-6">
 
 
-    <form method="post" action="contact">
+    <form method="post" action="contact" id="contact-form">
         {{csrf_field()}}
         <div class="container">
             <div class="row mb-3">
@@ -13,41 +16,34 @@
             </div>
             <div class="row justify-content-start mb-3">
                 <div class="col-6 form-group text-white w-100">
-                    <input type="text" class="rounder-borders w-100 form-control-lg @error('Name') is-invalid @enderror"
+                    <input type="text" class="rounder-borders w-100 form-control-lg"
                            placeholder="Name" name="name" id="name">
-                    @error('Name')
-                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                    @enderror
+                    <span class="invalid-feedback" role="alert"><strong id="errors-name"></strong></span>
+
                 </div>
                 <div class="col-6 form-group text-white w-100">
-                    <input type="text" class="rounder-borders w-100 form-control-lg @error('Email') is-invalid @enderror"
+                    <input type="text" class="rounder-borders w-100 form-control-lg"
                            placeholder="Email" name="email" id="email">
-                    @error('Email')
-                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                    @enderror
+                    <span class="invalid-feedback" role="alert"><strong id="errors-email"></strong></span>
                 </div>
             </div>
             <div class="row justify-content-start mb-3">
                 <div class="col-12">
                     <div class="form-group text-white h-100 pb-3">
                         <textarea style="resize: none"
-                                  class="rounder-borders h-100 w-100 form-control-lg textarea @error('Nachricht') is-invalid @enderror"
-                                  placeholder="Nachricht" name="message" id="message"></textarea>
-                        @error('Nachricht')
-                        <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                        @enderror
+                                  class="rounder-borders h-100 w-100 form-control-lg textarea"
+                                  placeholder="Nachricht" name="nachricht" id="nachricht"></textarea>
+                        <span class="invalid-feedback" role="alert"><strong id="errors-nachricht"></strong></span>
                     </div>
                 </div>
 
             </div>
             <div class="row justify-content-end pr-3">
-                <button type="submit" class="btn border-0 bg-button-color">Nachricht senden
+                <button type="submit" class="btn border-0 bg-button-color">
+                    Nachricht senden
+                    <div class="spinner-border spinner-grow-sm" role="status" id="contact-spinner">
+                        <span class="sr-only">Loading...</span>
+                    </div>
                 </button>
             </div>
         </div>

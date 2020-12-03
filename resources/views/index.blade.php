@@ -110,11 +110,62 @@
         <span class="text-white">&copy; 2020 <span class="font-weight-bold">QR</span>estaurant</span>
     </div>
 </main>
-<script src="../resources/js/jquery-3.5.1.slim.min.js"></script>
+<script src="../resources/js/jquery-3.5.1.js"></script>
 <script src="../resources/js/bootstrap.bundle.min.js"></script>
 <script src="../resources/js/sidenav.js"></script>
 <script src="../resources/js/ScrollMagic.min.js"></script>
 <script src="../resources/js/debug.addIndicators.min.js"></script>
 <script src="../resources/js/reveal-content.js"></script>
+<script>
+    let email = $('#email');
+    let nachricht = $('#nachricht');
+    let name = $('#name');
+
+    let mailError = $("#errors-email");
+    let nachrichtError = $("#errors-nachricht");
+    let nameError = $("#errors-name");
+
+    let successBar = '<div class="alert alert-success w-50 fixed-bottom mx-auto alert-dismissible fade show" role="alert"><strong>Vielen Dank für Deine Nachricht!</strong> Wir werden uns so schnell wie möglich bei Dir melden!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+
+    $('#contact-form').submit(function (e) {
+        e.preventDefault();
+        document.getElementById('contact-spinner').style.display = "inline-block";
+        $.ajax({
+            method: "POST",
+            url: "{{route('kontakt')}}",
+            data: {name: name.val(), email: email.val(), nachricht: nachricht.val(), "_token": "{{ csrf_token() }}"},
+
+
+            success: function (data) {
+                clearInputsAndErrors();
+                document.getElementById('contact-spinner').style.display = "none";
+                name.val("");
+                email.val("");
+                nachricht.val("");
+                $('#main').append(successBar);
+
+
+            },
+            error: function (xhr, status, error) {
+                document.getElementById('contact-spinner').style.display = "none";
+                clearInputsAndErrors();
+                $.each(xhr.responseJSON.errors, function (key, item) {
+                    $('#' + key).addClass('is-invalid');
+                    $("#errors-" + key).append(item)
+                });
+
+            }
+        })
+    });
+
+    function clearInputsAndErrors(){
+        email.removeClass('is-invalid');
+        nachricht.removeClass('is-invalid');
+        name.removeClass('is-invalid');
+        mailError.empty();
+        nachrichtError.empty();
+        nameError.empty();
+    }
+</script>
 </body>
 </html>
