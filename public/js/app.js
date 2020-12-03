@@ -19341,7 +19341,13 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // require('./jquery-3.5.1.slim.min');
+// require('./bootstrap.bundle.min');
+// require('./sidenav');
+// require('./ScrollMagic.min');
+// require('./reveal-content');
+// require('./bs-custom-file-input');
+// require('./upload-file');
 
 /***/ }),
 

@@ -44,6 +44,7 @@
                     <div class="spinner-border spinner-grow-sm" role="status" id="contact-spinner">
                         <span class="sr-only">Loading...</span>
                     </div>
+                    <i class="fas" style="display: none" id="contact-button-status"></i>
                 </button>
             </div>
         </div>

@@ -21,7 +21,8 @@ class ContactController extends Controller
         ];
 
         $customMessages = [
-            'required' => 'Das Feld :Attribute darf nicht leer sein.'
+            'required' => 'Das Feld :Attribute darf nicht leer sein.',
+            'email' => 'Bitte eine gültige E-Mail Adresse eingeben.'
         ];
 
         (new ContactController)->validate($request, $rules, $customMessages);

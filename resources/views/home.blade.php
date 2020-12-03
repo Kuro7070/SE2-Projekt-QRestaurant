@@ -2,7 +2,6 @@
     <div class="row h-50 p-5">
         <h1 class="text-light font-weight-bolder align-self-end" style="font-size: 100px">Kontaktloser<br>Bestellprozess
         </h1>
-
     </div>
     <div class="row h-50">
         <div class="col-4 p-5">

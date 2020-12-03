@@ -15,13 +15,13 @@ class SpeisekarteSeeder extends Seeder
     public function run()
     {   //id, karte
 
-        $imagelink = file_get_contents('resources/img/speisekarteDump.png');
-        $encdata = base64_encode($imagelink);
+//        $imagelink = file_get_contents('resources/img/speisekarteDump.png');
+//        $encdata = base64_encode($imagelink);
 
-        DB::table('speisekarte')->insert([
-            'karte'         =>  $encdata,
+        DB::table('files')->insert([
+            'name'         =>  "Test",
+            'file_path'         =>  "Path",
 
         ]);
-
     }
 }
