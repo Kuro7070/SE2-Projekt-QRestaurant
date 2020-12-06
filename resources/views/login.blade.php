@@ -6,7 +6,7 @@
 
         <div>
             <x-jet-label for="email" value="{{ __('Email') }}" />
-            <x-jet-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus />
+            <x-jet-input id="login-email" class="form-control" type="email" name="email" :value="old('email')" required autofocus />
         </div>
 
         <div class="mt-4">

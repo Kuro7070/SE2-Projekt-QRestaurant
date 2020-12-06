@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
 
     <title>QRestaurant</title>
 
@@ -13,7 +14,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
     <style type="text/css">
-        #reveal1,#reveal2,#reveal3 {
+        #reveal1, #reveal2, #reveal3 {
             opacity: 0;
             -webkit-transition: all 0.8s ease-in-out;
             -moz-transition: all 0.8s ease-in-out;
@@ -21,7 +22,8 @@
             -o-transition: all 0.8s ease-in-out;
             transition: all 0.8s ease-in-out;
         }
-        #reveal1.visible,#reveal2.visible,#reveal3.visible {
+
+        #reveal1.visible, #reveal2.visible, #reveal3.visible {
             opacity: 1;
             -webkit-transform: none;
             -moz-transform: none;
@@ -80,31 +82,83 @@
 </nav>
 
 <main data-spy="scroll" data-target="#navx" data-offset="100" id="main" role="main" class="container-fluid">
-
+    @include('speisekarte-upload')
     <div id="trigger1"></div>
-    <div id="reveal1" class="row h-100">
+    <div id="reveal1" class="row h-100 justify-content-center align-content-center">
         @include('home')
     </div>
 
     <div id="trigger2"></div>
-    <div id="reveal2" class="row h-100 ">
+    <div id="reveal2" class="row h-100 justify-content-center align-content-center">
         @include('tutorials')
     </div>
 
     <div id="trigger3"></div>
-    <div id="reveal3" class="row h-100">
-        @include('kontakt')
+    <div id="reveal3" class="row h-75 justify-content-center align-content-center">
+        @include('contact')
+    </div>
+
+
+    <div class="row h-25 bg-light">
+        {{--    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})--}}
+        <span class="text-white">&copy; 2020 <span class="font-weight-bold">QR</span>estaurant</span>
     </div>
 </main>
-<footer class="footer">
-    {{--    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})--}}
-    <span class="text-white">&copy; 2020 <span class="font-weight-bold">QR</span>estaurant</span>
-</footer>
-<script src="../resources/js/jquery-3.5.1.slim.min.js"></script>
+<script src="../resources/js/jquery-3.5.1.js"></script>
 <script src="../resources/js/bootstrap.bundle.min.js"></script>
 <script src="../resources/js/sidenav.js"></script>
 <script src="../resources/js/ScrollMagic.min.js"></script>
 <script src="../resources/js/debug.addIndicators.min.js"></script>
 <script src="../resources/js/reveal-content.js"></script>
+<script src="../resources/js/bs-custom-file-input.js"></script>
+<script src="../resources/js/upload-file.js"></script>
+<script src="../resources/js/contact.js"></script>
+<script src="../resources/js/remove-file.js"></script>
+
+<script>
+    $('#my-modal').on('show.bs.modal', function (event) {
+        var modalTitle = $(event.relatedTarget).data('name') + " löschen?";
+        var modalText = "Möchtest Du <strong>" + $(event.relatedTarget).data('name') + "</strong> wirklich löschen?";
+
+        $(this).find(".modal-title").text(modalTitle);
+        $(this).find(".modal-text").html(modalText);
+
+        $("#remove-pdf-button").click(function (e) {
+            e.preventDefault();
+            $('#pdfs-backdrop').css('display', 'inline-flex');
+            document.getElementById('remove-pdf-spinner').style.display = "inline-block";
+            document.getElementById('remove-pdf-button').setAttribute('disabled', '');
+            $.ajax({
+                method: "POST",
+                url: $("#open-remove-pdf-modal-button").data('href'),
+                data: {
+                    path: $("#open-remove-pdf-modal-button").data('name'),
+                },
+                success: function (data) {
+                    $('#my-modal').modal('hide');
+                    $('#pdfs').load('pdfs', function () {
+                        $('#pdfs-backdrop').hide();
+                    });
+                    document.getElementById('remove-pdf-spinner').style.display = "none";
+                    document.getElementById('remove-pdf-button').removeAttribute('disabled');
+                },
+                error: function (xhr, status, error) {
+                    $('#pdfs').load('pdfs', function () {
+                        $('#pdfs-backdrop').hide();
+                    });
+                    document.getElementById('remove-pdf-spinner').style.display = "none";
+                    document.getElementById('remove-pdf-button').removeAttribute('disabled');
+                },
+            })
+        });
+    });
+</script>
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
 </body>
 </html>

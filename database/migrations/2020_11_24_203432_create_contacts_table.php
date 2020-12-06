@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSpeisekarteTable extends Migration
+class CreateContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,15 @@ class CreateSpeisekarteTable extends Migration
      */
     public function up()
     {
-        Schema::create('speisekarte', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->mediumText('karte')->nullable(); #binary equivalent zu blob
+
+        Schema::create('contacts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('email');
+            $table->text('message');
+            $table->timestamps();
         });
+
     }
 
     /**
@@ -26,6 +31,6 @@ class CreateSpeisekarteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('speisekarte');
+        Schema::drop("contacts");
     }
 }

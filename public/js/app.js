@@ -19341,7 +19341,13 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // require('./jquery-3.5.1.slim.min');
+// require('./bootstrap.bundle.min');
+// require('./sidenav');
+// require('./ScrollMagic.min');
+// require('./reveal-content');
+// require('./bs-custom-file-input');
+// require('./upload-file');
 
 /***/ }),
 
@@ -19384,8 +19390,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Uni\Semester4\SE2\Projekt\XAMPP\htdocs\qrestaurant\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Uni\Semester4\SE2\Projekt\XAMPP\htdocs\qrestaurant\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! C:\xampp\htdocs\qrestaurant\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\qrestaurant\resources\css\app.css */"./resources/css/app.css");
 
 
 /***/ })

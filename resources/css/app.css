@@ -1,7 +1,5 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
 @import 'bootstrap.min.css';
+@import 'font-awesome.css';
 
 html, body {
     position: relative;
@@ -139,15 +137,26 @@ textarea.rounder-borders {
     border-radius: 9px;
 }
 
-.form-control:focus {
+.form-control, .form-control-lg {
+    border: none;
+    transition: all .5s;
+}
+.form-control:focus, .form-control-lg:focus {
     border-color: #ebebeb !important;
     box-shadow: 0 0 0 0.3rem rgba(255,255,255,.25) !important;
+    outline: none;
+    background-color: lightgray;
+
+}
+.form-control:hover, .form-control-lg:hover {
+    background-color: lightgray;
 }
 
 .bg-button-color {
     background: rgba(255,255,255,0.1);
     color: #fff;
     font-weight: bold;
+    transition: .5s all;
 }
 
 .bg-button-color:hover {
@@ -228,3 +237,33 @@ textarea.rounder-borders {
     }
 }
 
+.custom-file-label::after { content: "Durchsuchen";}
+
+
+.qr-container {
+    position: relative;
+    display: inline-block;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.qr-container:hover .overlay {
+    opacity: 1;
+}
+
+#contact-spinner, #remove-pdf-spinner, #upload-spinner, #pdfs-backdrop {
+    display: none;
+}
