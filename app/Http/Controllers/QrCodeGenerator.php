@@ -10,7 +10,7 @@ use Endroid\QrCode\Response\QrCodeResponse;
 
 class QrCodeGenerator extends Controller
 {
-    public static function generateQRCode($url)
+    public static function generateQRCode($url, $alpha = 0)
     {
 
         $qrCode = new QrCode($url);
@@ -21,7 +21,7 @@ class QrCodeGenerator extends Controller
         $qrCode->setEncoding('UTF-8');
         $qrCode->setErrorCorrectionLevel(ErrorCorrectionLevel::HIGH());
         $qrCode->setForegroundColor(['r' => 0, 'g' => 0, 'b' => 0, 'a' => 0]);
-        $qrCode->setBackgroundColor(['r' => 255, 'g' => 255, 'b' => 255, 'a' => 0]);
+        $qrCode->setBackgroundColor(['r' => 255, 'g' => 255, 'b' => 255, 'a' => $alpha]);
 //        $qrCode->setLogoPath(__DIR__ . '/../assets/images/symfony.png');
 //        $qrCode->setLogoSize(150, 200);
         $qrCode->setValidateResult(false);

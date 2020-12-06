@@ -263,3 +263,7 @@ textarea.rounder-borders {
 .qr-container:hover .overlay {
     opacity: 1;
 }
+
+#contact-spinner, #remove-pdf-spinner, #upload-spinner, #pdfs-backdrop {
+    display: none;
+}

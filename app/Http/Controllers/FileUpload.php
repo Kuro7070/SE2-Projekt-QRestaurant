@@ -54,16 +54,19 @@ class FileUpload extends Controller
             array_push($codes, [
                 'qr'   => self::getQRUri(asset($menus->file_path)),
                 'path' => asset($menus->file_path),
-                'id'   => $menus->id
+                'id'   => $menus->id,
+                'name'   => $menus->name
             ]);
         }
-        return $codes;
+        return array_reverse($codes);
     }
 
     public static function destroy(Request $request)
     {
         $id = $request['id'];
         DB::table('files')->where('id', '=', $id)->delete();
+        Storage::delete($request['name']);
+
         return back()
             ->with('delete-success', 'Speisekarte wurde erfolgreich gelöscht.');
     }
