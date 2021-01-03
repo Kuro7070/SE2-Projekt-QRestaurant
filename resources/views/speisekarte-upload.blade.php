@@ -12,35 +12,21 @@
                 </tr>
             </table>
 
-            <div id="login_name">
+            <div id="id_name">
                 <label id="name" style="font-size:20px">Max Mustermann</label>
             </div>
 
-            <div id="email" style="font-size:20px">
+            <div id="id_email" style="font-size:20px">
                 <label id="email" >Max@email.de</label>
             </div>
 
+            <div id="id_adresse" style="font-size:20px">
+                <label id="adresse" >ABC Strasse 1</label>
+            </div>
 
-
-            <table style="width:100%">
-                <tr>
-                    <th>
-                        <!--passwort ändern-->
-                        <div class="col-lg-6 col-md-6 col-sm-12 form-group text-white w-100">
-                            <input type="text" class="rounder-borders w-100 form-control-lg"
-                                   placeholder="New Passwort" name="password" id="password">
-                            <span class="invalid-feedback" role="alert"><strong id="errors-password"></strong></span>
-                        </div>
-                    </th>
-                    <th>
-                        <button type="submit" name="submit">
-                            <label id="name" style="font-size:20px">submit</label>
-                        </button>
-
-                    </th>
-
-                </tr>
-            </table>
+            <div id="id_telefonnummer" style="font-size:20px">
+                <label id="telefonnummer" >123456789</label>
+            </div>
 
 
 
