@@ -82,7 +82,7 @@
 </nav>
 
 <main data-spy="scroll" data-target="#navx" data-offset="100" id="main" role="main" class="container-fluid">
-
+    @include('speisekarte-upload')
     <div id="trigger1"></div>
     <div id="reveal1" class="row h-100 justify-content-center align-content-center">
         @include('home')
