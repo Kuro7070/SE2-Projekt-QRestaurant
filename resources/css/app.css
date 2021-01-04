@@ -245,6 +245,7 @@ textarea.rounder-borders {
     background-color: #3453;
     font-size: 23px;
     border-bottom: 4px solid black;
+    outline: none;
 }
 
 #passwordCaption, .emailCaption {
@@ -262,7 +263,7 @@ textarea.rounder-borders {
     display: flex;
     width: 50%;
     box-sizing: border-box;
-    margin: 0px 25% 0px 25% !important;
+    margin: 0 25% 0 25% !important;
     height: 75px;
     box-shadow: none !important;
     border: none;

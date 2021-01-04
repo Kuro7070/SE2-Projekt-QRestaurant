@@ -28,8 +28,8 @@
         <div class="flex items-center justify-end mt-4">
 
 
-            <button id="loginbttn" class="ml-4">
-                {{ __('Login') }}
+            <button id="loginbttn" class="justify-content-center">
+               <label class="align-self-center">Login</label>
             </button>
             @if (Route::has('password.request'))
                 <a id="forgotten" class="underline text-sm text-gray-600 hover:text-gray-900"
