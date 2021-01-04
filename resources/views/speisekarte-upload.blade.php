@@ -13,11 +13,11 @@
             </table>
 
             <div id="id_name">
-                <label id="name" style="font-size:20px">Max Mustermann</label>
+                <label id="name" style="font-size:20px">{{auth()->user()->name}}</label>
             </div>
 
             <div id="id_email" style="font-size:20px">
-                <label id="email" >Max@email.de</label>
+                <label id="email" >{{auth()->user()->email}}</label>
             </div>
 
             <div id="id_adresse" style="font-size:20px">
@@ -27,8 +27,7 @@
             <div id="id_telefonnummer" style="font-size:20px">
                 <label id="telefonnummer" >123456789</label>
             </div>
-
-
+<!-- TODO profile image -->
 
             <form action="upload-file" method="post" id="fileUpload-form">
 
