@@ -22,6 +22,7 @@ class User extends Authenticatable
     {
         return $this->id;
     }
+
     /**
      * The attributes that are mass assignable.
      *
@@ -31,6 +32,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'street',
+        'streetno',
+        'zip',
         'profile_photo_path'
     ];
 

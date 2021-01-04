@@ -134,12 +134,26 @@
             $('#pwindicator').hide();
 
         }
-    });
-    $('#new-password-confirm').on("input", function () {
+        let pwConfirm = '<i class="fas fa-check-double text-success"></i>';
+        $('#pw-confirm').empty();
         if ($('#new-password').val() === $('#new-password-confirm').val()) {
-            let pwConfirm = '<i class="fas fa-check-double text-success"></i>';
             $('#pw-confirm').append(pwConfirm);
             $('#pw-confirm').show();
+        }else{
+            $('#pw-confirm').empty();
+            $('#pw-confirm').hide();
+
+        }
+    });
+    $('#new-password-confirm').on("input", function () {
+        let pwConfirm = '<i class="fas fa-check-double text-success"></i>';
+        $('#pw-confirm').empty();
+        if ($('#new-password').val() === $('#new-password-confirm').val()) {
+            $('#pw-confirm').append(pwConfirm);
+            $('#pw-confirm').show();
+        }else{
+            $('#pw-confirm').empty();
+            $('#pw-confirm').hide();
 
         }
     });

@@ -35,8 +35,6 @@
 </head>
 
 <body>
-{{\Illuminate\Support\Facades\Hash::make('ss8515449SS')}}
-
 <div id="backdrop"></div>
 <div id="mySidenav" class="sidenav">
     @include('login')

@@ -134,6 +134,27 @@ class UserController extends Controller
             }
         }
 
+        if (isset($request['street']) && !empty($request['street'])) {
+            if (old('street', auth()->user()->street)!==$request['street']) {
+                $user->street = $request['street'];
+                $user->save();
+            }
+        }
+
+        if (isset($request['streetno']) && !empty($request['streetno'])) {
+            if (old('streetno', auth()->user()->streetno)!==$request['streetno']) {
+                $user->streetno = $request['streetno'];
+                $user->save();
+            }
+        }
+
+        if (isset($request['zip']) && !empty($request['zip'])) {
+            if (old('zip', auth()->user()->zip)!==$request['zip']) {
+                $user->zip = $request['zip'];
+                $user->save();
+            }
+        }
+
         if ((isset($request['new-password']) && !empty($request['new-password'])) && (isset($request['current-password']) && !empty($request['current-password']))) {
             $rules = [
                 'current-password'     => 'string',

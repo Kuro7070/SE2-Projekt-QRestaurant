@@ -6,7 +6,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
-use LasseRafn\InitialAvatarGenerator\InitialAvatar;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -20,7 +19,6 @@ class CreateNewUser implements CreatesNewUsers
      */
     public function create(array $input)
     {
-        $avatar = new InitialAvatar();
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -30,8 +28,10 @@ class CreateNewUser implements CreatesNewUsers
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
+            'street' => $input['street'],
+            'streetno' => $input['streetno'],
+            'zip' => $input['zip'],
             'password' => Hash::make($input['password']),
-            'profile_photo_path' => base64_encode($avatar->name($input['name'])->generate()->stream('png', 100))
         ]);
     }
 }
