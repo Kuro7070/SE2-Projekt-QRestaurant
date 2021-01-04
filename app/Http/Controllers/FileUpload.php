@@ -28,7 +28,7 @@ class FileUpload extends Controller
 
         if ($request->file()) {
             $fileName = time() . '_' . $request->file->getClientOriginalName();
-            $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
+            $filePath = $request->file('file')->storeAs('uploads', uniqid(). \Illuminate\Support\Facades\File::extension($fileName), 'public');
 
             $fileModel->name         = time() . '_' . $request->file->getClientOriginalName();
             $fileModel->file_path    = '/storage/' . $filePath;
@@ -44,13 +44,14 @@ class FileUpload extends Controller
 
     public static function getPDF()
     {
-        $query = 'Select * from files f ';
-        $query .= 'where f.gastronom_id = ' . Auth::id();
-
-        $result = DB::select($query);
-
         $codes = [];
-        foreach ($result as $menus) {
+        if(Auth::check()){
+            $query = 'Select * from files f ';
+            $query .= 'where f.gastronom_id = ' . Auth::id();
+
+            $result = DB::select($query);
+
+            foreach ($result as $menus) {
             array_push($codes, [
                 'qr'   => self::getQRUri(asset($menus->file_path)),
                 'path' => asset($menus->file_path),
@@ -59,6 +60,9 @@ class FileUpload extends Controller
             ]);
         }
         return array_reverse($codes);
+        }
+
+        return $codes;
     }
 
     public static function destroy(Request $request)

@@ -1,11 +1,11 @@
-let email = $('#email');
-let nachricht = $('#nachricht');
-let name = $('#name');
+let email = $('#contact_email');
+let nachricht = $('#contact_nachricht');
+let name = $('#contact_name');
 let contactButtonStatus = $('#contact-button-status');
 
-let mailError = $("#errors-email");
-let nachrichtError = $("#errors-nachricht");
-let nameError = $("#errors-name");
+let mailError = $("#errors-contact_email");
+let nachrichtError = $("#errors-contact_nachricht");
+let nameError = $("#errors-contact_name");
 let contactSuccessBar = '<div class="alert alert-success w-50 fixed-bottom mx-auto alert-dismissible fade show" role="alert"><strong>Vielen Dank für Deine Nachricht!</strong> Wir werden uns so schnell wie möglich bei Dir melden!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
 
 $('#contact-form').submit(function (e) {
@@ -18,9 +18,9 @@ $('#contact-form').submit(function (e) {
         method: "POST",
         url: $("#contact-submit-button").data('href'),
         data: {
-            name: name.val(),
-            email: email.val(),
-            nachricht: nachricht.val()
+            contact_name: name.val(),
+            contact_email: email.val(),
+            contact_nachricht: nachricht.val()
         },
         success: function (data) {
             document.getElementById('contact-submit-button').removeAttribute('disabled');
@@ -41,7 +41,7 @@ $('#contact-form').submit(function (e) {
             clearInputsAndErrors();
             $.each(xhr.responseJSON.errors, function (key, item) {
                 $('#' + key).addClass('is-invalid');
-                $("#errors-" + key).append(item)
+                $("#errors-" + key).append(item);
             });
         }
     })

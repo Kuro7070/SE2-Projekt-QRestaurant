@@ -18,7 +18,7 @@ class CreateFilesTable extends Migration
             $table->string('name')->nullable();
             $table->string('file_path')->nullable();
             $table->unsignedBigInteger("gastronom_id")->nullable();
-            $table->foreign('gastronom_id')->references('id')->on('gastronom');
+            $table->foreign('gastronom_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

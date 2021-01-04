@@ -1,3 +1,6 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 @import 'bootstrap.min.css';
 @import 'font-awesome.css';
 
@@ -13,7 +16,7 @@ body {
     flex-direction: column;
     min-height: 100%;
     /*margin-bottom: 60px; !* Margin bottom by footer height *!*/
-    background: url("../img/bg.jpg")  no-repeat center center fixed;
+    background: url("../img/bg.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -141,32 +144,34 @@ textarea.rounder-borders {
     border: none;
     transition: all .5s;
 }
+
 .form-control:focus, .form-control-lg:focus {
     border-color: #ebebeb !important;
-    box-shadow: 0 0 0 0.3rem rgba(255,255,255,.25) !important;
+    box-shadow: 0 0 0 0.3rem rgba(255, 255, 255, .25) !important;
     outline: none;
     background-color: lightgray;
 
 }
+
 .form-control:hover, .form-control-lg:hover {
     background-color: lightgray;
 }
 
 .bg-button-color {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     color: #fff;
     font-weight: bold;
     transition: .5s all;
 }
 
 .bg-button-color:hover {
-    background: rgba(255,255,255,0.5);
-    color: rgba(0,0,0,0.8);
+    background: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .bg-button-color:active {
-    background: rgba(255,255,255,0.3);
-    color: rgba(0,0,0,0.8);
+    background: rgba(255, 255, 255, 0.3);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .bg-warm-grey {
@@ -175,7 +180,7 @@ textarea.rounder-borders {
 }
 
 .bg-transparent-black {
-    background: rgba(0,0,0,0.6) !important;
+    background: rgba(0, 0, 0, 0.6) !important;
     color: #fff !important;
 }
 
@@ -237,10 +242,12 @@ textarea.rounder-borders {
     }
 }
 
-.custom-file-label::after { content: "Durchsuchen";}
+.custom-file-label::after {
+    content: "Durchsuchen";
+}
 
 
-.qr-container {
+.qr-container, .photo-container {
     position: relative;
     display: inline-block;
 }
@@ -253,17 +260,31 @@ textarea.rounder-borders {
     color: #f1f1f1;
     width: 100%;
     transition: .5s ease;
-    opacity:0;
+    opacity: 0;
     color: white;
     font-size: 20px;
     padding: 20px;
     text-align: center;
 }
 
-.qr-container:hover .overlay {
+.qr-container:hover .overlay, .photo-container:hover .overlay {
     opacity: 1;
 }
 
 #contact-spinner, #remove-pdf-spinner, #upload-spinner, #pdfs-backdrop {
     display: none;
+}
+
+.profile-picture {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.nav-profile-picture {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    cursor: pointer;
 }

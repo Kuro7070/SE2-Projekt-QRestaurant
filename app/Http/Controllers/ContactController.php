@@ -13,15 +13,14 @@ class ContactController extends Controller
 
 
 //        dd($request);
-
         $rules = [
-            'name' => 'required',
-            'email' => 'required|email',
-            'nachricht' => 'required',
+            'contact_name' => 'required',
+            'contact_email' => 'required|email',
+            'contact_nachricht' => 'required',
         ];
 
         $customMessages = [
-            'required' => 'Das Feld :Attribute darf nicht leer sein.',
+            'required' => 'Dieses Feld darf nicht leer sein.',
             'email' => 'Bitte eine gültige E-Mail Adresse eingeben.'
         ];
 
@@ -29,27 +28,24 @@ class ContactController extends Controller
 
         $contact = new Contact;
 
-        $contact->name = $request->name;
-        $contact->email = $request->email;
-        $contact->message = $request->nachricht;
+        $contact->name = $request->contact_name;
+        $contact->email = $request->contact_email;
+        $contact->message = $request->contact_nachricht;
 
         $contact->save();
 
         \Mail::send('mails/contact_email',
             array(
-                'name' => $request->get('name'),
-                'email' => $request->get('email'),
-                'user_message' => $request->get('nachricht'),
+                'name' => $request->get('contact_name'),
+                'email' => $request->get('contact_email'),
+                'user_message' => $request->get('contact_nachricht'),
             ), function($message) use ($request)
             {
-                $message->from($request->email);
+                $message->from($request->contact_email);
                 $message->to('dev@qrestaurant.com');
             });
         return back()->with('contact-success', '');
 
     }
 
-    public static function setSuccess(){
-        Session::put('contact-success','');
-    }
 }
