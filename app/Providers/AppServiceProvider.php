@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use http\Url;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        if(env('FORCE_HTTPS',true)) { // Default value should be false for local server
+            url()->forceScheme('https');
+        }
     }
 }
