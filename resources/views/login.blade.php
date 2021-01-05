@@ -1,36 +1,42 @@
-<div class="container">
+<div class="container" id="loginbereich">
     <a href="javascript:void(0)" class="closebtn" onclick="openNav()">&times;</a>
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
         <div>
-            <label for="email" value="{{ __('Email') }}" />
-            <input id="login-email" class="form-control" type="email" name="email" :value="old('email')" required autofocus />
+            <label class="emailCaption"
+                   for="email">
+                Email
+            </label>
+            <input id="email"  type="email" name="email" :value="old('email')" required autofocus/>
         </div>
 
         <div class="mt-4">
-            <label for="password" value="{{ __('Password') }}" />
-            <input id="login-password" class="form-control" type="password" name="password" required autocomplete="current-password" />
+            <label id="passwordCaption" for="password">Passwort</label>
+            <input id="password"  type="password" name="password" required
+                   autocomplete="current-password"/>
         </div>
 
-        <div class="block mt-4">
+        <div class="block mt-4" id="block1">
             <label for="remember_me" class="flex items-center">
                 <input id="remember_me" type="checkbox" class="form-control" name="remember">
-                <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                <span id="remebermetext" class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
             </label>
         </div>
 
         <div class="flex items-center justify-end mt-4">
+
+
+            <button id="loginbttn" class="justify-content-center">
+               <label class="align-self-center">Login</label>
+            </button>
             @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                <a id="forgotten" class="underline text-sm text-gray-600 hover:text-gray-900"
+                   href="{{ route('password.request') }}">
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
-
-            <button class="ml-4">
-                {{ __('Login') }}
-            </button>
         </div>
     </form>
 </div>
