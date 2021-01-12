@@ -18,7 +18,7 @@ class CreateGastronomHatSpeisekarteTable extends Migration
             $table->unsignedBigInteger('speise_id')->nullable();
             $table->unsignedBigInteger('gastro_id')->nullable();
             $table->foreign('speise_id')->references('id')->on('files');
-            $table->foreign('gastro_id')->references('id')->on('gastronom');
+            $table->foreign('gastro_id')->references('id')->on('users');
 
         });
     }

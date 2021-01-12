@@ -19,12 +19,15 @@ class UsersSeeder extends Seeder
 //        $encdata = base64_encode($imagelink);
 
         DB::table('users')->insert([
-            'name'     => "Test",
+            'vorname'     => "Test",
+            'nachname'    => "Mr. Tester",
             'street'   => "Teststr",
             'streetno' => "111",
             'zip'      => "22769",
+            'ort'      => "Hamburg",
+            'telefonnummer'      => "0157128",
             'email'    => "test@test.de",
-            'password' => "$2y$10$.5bKaf499rWw.c5raesXkuADsX5TKz.m5g/mc8P5KTpBiNv9gZJXi",
+            'password' => "12345678",
 
         ]);
     }
