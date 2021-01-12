@@ -2,12 +2,15 @@
     <form action="upload-file" method="post" id="fileUpload-form">
 
         <div class="custom-file">
+
             <input type="file" name="file" class="custom-file-input" id="chooseFile" onchange="enableUpload()"
                    accept=".pdf">
-            <label class="custom-file-label" for="chooseFile" id="chooseFileLabel">PDF Speisekarte auswählen</label>
+
+            <label class="custom-file-label " for="chooseFile" id="chooseFileLabel"  style="max-width: 50%">PDF Speisekarte auswählen</label>
         </div>
 
-        <button type="submit" name="submit" class="btn btn-primary btn-block mt-4" data-href="{{route('fileUpload')}}" data-token="{{csrf_token()}}" id="fileUpload-submit-button">
+        <button type="submit" name="submit" class="btn btn-primary btn-block mt-4 " data-href="{{route('fileUpload')}}" data-token="{{csrf_token()}}" id="fileUpload-submit-button" disabled
+                style="max-width: 50%">
             Speisekarte hochladen
 
             <div class="spinner-border spinner-grow-sm" role="status" id="upload-spinner">
