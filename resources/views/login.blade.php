@@ -9,16 +9,16 @@
                    for="email">
                 Email
             </label>
-            <input id="email"  type="email" name="email" :value="old('email')" required autofocus/>
+            <input id="email" class="email" type="email" name="email" :value="old('email')" required autofocus/>
         </div>
 
         <div class="mt-4">
-            <label id="passwordCaption" for="password">Passwort</label>
-            <input id="password"  type="password" name="password" required
+            <label class="passwordCaption" for="password">Passwort</label>
+            <input id="password"  class="password"  type="password" name="password" required
                    autocomplete="current-password"/>
         </div>
 
-        <div class="block mt-4" id="block1">
+        <div class="block mt-4 block1" >
             <label for="remember_me" class="flex items-center">
                 <input id="remember_me" type="checkbox" class="form-control" name="remember">
                 <span id="remebermetext" class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
@@ -28,7 +28,7 @@
         <div class="flex items-center justify-end mt-4">
 
 
-            <button id="loginbttn" class="justify-content-center">
+            <button id="loginbttn" class="justify-content-center loginbttn">
                <label class="align-self-center">Login</label>
             </button>
             @if (Route::has('password.request'))
