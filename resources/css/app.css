@@ -298,7 +298,7 @@ textarea.rounder-borders {
     cursor: pointer;
 }
 
-#email,#password {
+.email,.password {
     width: 100%;
     padding: 5px;
     border: none;
@@ -333,6 +333,53 @@ textarea.rounder-borders {
     color: white;
 }
 
+
+.register-body {
+    padding-right: 15%;
+    padding-left: 15%;
+}
+.register-region {
+    padding: 40px;
+    border-radius: 10px;
+    background-color: white;
+}
+
 #forgotten {
     text-align: center;
+}
+
+.register_input_div input{
+    padding: 5px;
+    border: none;
+    background-color: #3453;
+    font-size: 23px;
+    border-bottom: 4px solid black;
+    outline: none;
+}
+
+.register_input_div div{
+   width: 200px;
+}
+
+.register_input_div span{
+    width: 100%;
+}
+
+.register_already{
+    color: black;
+}
+
+
+.register_already:hover{
+    color: gray;
+}
+
+.register_caption{
+    font-size: 50px;
+    color: black;
+    text-align: center;
+}
+
+.register_caption_div {
+    align-content: center;
 }
