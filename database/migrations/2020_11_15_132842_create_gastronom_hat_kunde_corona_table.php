@@ -18,7 +18,7 @@ class CreateGastronomHatKundeCoronaTable extends Migration
             $table->unsignedBigInteger('corona_id')->nullable();
             $table->unsignedBigInteger('gastro_id')->nullable();
             $table-> foreign('corona_id')-> references('id')->on('kunde_corona');
-            $table-> foreign('gastro_id')-> references('id')->on('gastronom');
+            $table-> foreign('gastro_id')-> references('id')->on('users');
 
         });
     }
