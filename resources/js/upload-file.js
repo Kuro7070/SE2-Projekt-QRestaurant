@@ -1,10 +1,11 @@
 bsCustomFileInput.init();
 document.getElementById('fileUpload-submit-button').setAttribute('disabled', '');
-
+console.log('hi');
 let uploadButtonStatus = $('#upload-button-status');
 let uploadSuccessBar = '<div class="alert alert-success w-50 fixed-bottom mx-auto alert-dismissible fade show" role="alert"><strong>Speisekarte wurde erfolgreich hochgeladen!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
 
 $('#fileUpload-form').submit(function (e) {
+    console.log('hierrr');
     e.preventDefault();
     document.getElementById('upload-spinner').style.display = "inline-block";
     document.getElementById('fileUpload-submit-button').setAttribute('disabled', '');

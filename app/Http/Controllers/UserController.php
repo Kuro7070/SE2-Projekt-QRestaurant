@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\Fortify\PasswordValidationRules;
+use App\Actions\Jetstream\DeleteUser;
 use App\Models\User;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\Request;
@@ -54,6 +55,14 @@ class UserController extends Controller
         }
     }
 
+    public static function deleteUser()
+    {
+        User::find(auth()->user()->id)->delete();
+
+        session()->push('deleteSuccess', 'Account gelöscht');
+        return redirect()->to('/');
+    }
+
     public static function getProfilePic()
     {
         $user = User::find(Auth::id());
@@ -61,7 +70,8 @@ class UserController extends Controller
         if (!is_null($user->profile_photo_path)) {
             return asset($user->profile_photo_path);
         } else {
-            return (new \Laravolt\Avatar\Avatar)->create($user->name)->toBase64();
+            $avatar = new Avatar(config('laravolt.avatar'));
+            return $avatar->create($user->vorname.' '.$user->nachname)->setTheme('colorful')->toBase64();
         }
     }
 
@@ -89,9 +99,10 @@ class UserController extends Controller
     {
         $user  = User::find(Auth::id());
         $rules = [
-            'name'  => 'string|max:255',
-            'email' => 'email',
-            'photo' => 'mimes:jpg,png|max:2048',
+            'vorname'  => 'string|max:255',
+            'nachname' => 'string|max:255',
+            'email'    => 'email',
+            'photo'    => 'mimes:jpg,png|max:2048',
         ];
 
         $customMessages = [
@@ -127,29 +138,50 @@ class UserController extends Controller
             ])->save();
         }
 
-        if (isset($request['name']) && !empty($request['name'])) {
-            if (old('name', auth()->user()->name)!==$request['name']) {
-                $user->name = $request['name'];
+        if (isset($request['vorname']) && !empty($request['vorname'])) {
+            if (old('vorname', auth()->user()->vorname) !== $request['vorname']) {
+                $user->vorname = $request['vorname'];
+                $user->save();
+            }
+        }
+
+        if (isset($request['nachname']) && !empty($request['nachname'])) {
+            if (old('nachname', auth()->user()->nachname) !== $request['nachname']) {
+                $user->nachname = $request['nachname'];
                 $user->save();
             }
         }
 
         if (isset($request['street']) && !empty($request['street'])) {
-            if (old('street', auth()->user()->street)!==$request['street']) {
+            if (old('street', auth()->user()->street) !== $request['street']) {
                 $user->street = $request['street'];
                 $user->save();
             }
         }
 
+        if (isset($request['telefonnummer']) && !empty($request['telefonnummer'])) {
+            if (old('telefonnummer', auth()->user()->telefonnummer) !== $request['telefonnummer']) {
+                $user->telefonnummer = $request['telefonnummer'];
+                $user->save();
+            }
+        }
+
+        if (isset($request['ort']) && !empty($request['ort'])) {
+            if (old('ort', auth()->user()->ort) !== $request['ort']) {
+                $user->ort = $request['ort'];
+                $user->save();
+            }
+        }
+
         if (isset($request['streetno']) && !empty($request['streetno'])) {
-            if (old('streetno', auth()->user()->streetno)!==$request['streetno']) {
+            if (old('streetno', auth()->user()->streetno) !== $request['streetno']) {
                 $user->streetno = $request['streetno'];
                 $user->save();
             }
         }
 
         if (isset($request['zip']) && !empty($request['zip'])) {
-            if (old('zip', auth()->user()->zip)!==$request['zip']) {
+            if (old('zip', auth()->user()->zip) !== $request['zip']) {
                 $user->zip = $request['zip'];
                 $user->save();
             }
@@ -171,7 +203,7 @@ class UserController extends Controller
 //                $user->forceFill([
 //                    'password' => Hash::make($request['new-password']),
 //                ])->save();
-                $user->password = Hash::make($request['new-password']);
+                $user->reg_password = Hash::make($request['new-password']);
                 $user->save();
             }
         }
