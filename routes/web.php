@@ -2,6 +2,8 @@
 
 use App\Actions\Fortify\UpdateUserProfileInformation;
 use App\Http\Controllers\FileUpload;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,3 +49,5 @@ Route::get('/pdfs', function() {
 Route::get('/remove-file', function() {
     return view('delete-pdf');
 });
+
+Route::any('/delete', [\App\Http\Controllers\UserController::class, 'deleteUser'])->name('delete');

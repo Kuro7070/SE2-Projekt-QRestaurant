@@ -280,7 +280,7 @@ textarea.rounder-borders {
     opacity: 1;
 }
 
-#contact-spinner, #remove-pdf-spinner, #upload-spinner, #pdfs-backdrop {
+#contact-spinner, #remove-pdf-spinner, #upload-spinner, #pdfs-backdrop, #remove-account-spinner {
     display: none;
 }
 
