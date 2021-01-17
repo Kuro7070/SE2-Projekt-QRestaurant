@@ -196,6 +196,19 @@
         });
     });
 </script>
+<script>
+    $('#remove-account-modal').on('show.bs.modal', function (event) {
+        var modalTitle = "Account unwiderruflich löschen?";
+        var modalText = "Möchtest Du uns wirklich verlassen? <strong>Dein Account wird vollständig und unwiderruflich aus dem System entfernt.</strong>";
+
+        $(this).find(".modal-title").text(modalTitle);
+        $(this).find(".modal-text").html(modalText);
+
+        $("#remove-account-button").click(function (e) {
+            document.getElementById('remove-account-spinner').style.display = "inline-block";
+        });
+    });
+</script>
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {

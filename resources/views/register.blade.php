@@ -9,9 +9,16 @@
             </div>
             <div class="input-group mb-3 register_input_div">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Vorname</span>
                 </div>
-                <input id="name" name="name" required autofocus autocomplete="name" type="text" class="form-control"
+                <input id="vorname" name="vorname" required autofocus autocomplete="vorname" type="text" class="form-control"
+                       aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3 register_input_div">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nachname</span>
+                </div>
+                <input id="nachname" name="nachname" required autofocus autocomplete="nachname" type="text" class="form-control"
                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             </div>
             <div class="input-group mb-3 register_input_div">
@@ -34,7 +41,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Ort</span>
                 </div>
-                <input id="city" name="city" required autofocus autocomplete="city" type="text" class="form-control"
+                <input id="ort" name="ort" required autofocus autocomplete="ort" type="text" class="form-control"
                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             </div>
             <div class="input-group mb-3 register_input_div">
@@ -49,7 +56,14 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">E-Mail</span>
                 </div>
-                <input id="email" name="email" required autofocus autocomplete="email" type="email" class="form-control"
+                <input id="reg_email" name="reg_email" required autofocus autocomplete="reg_email" type="email" class="form-control"
+                       aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3 register_input_div">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Telefonnummer</span>
+                </div>
+                <input id="telefonnummer" name="telefonnummer" required autofocus autocomplete="telefonnummer" type="text" class="form-control"
                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             </div>
 
@@ -57,7 +71,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Passwort</span>
                 </div>
-                <input id="password" name="password" required autofocus autocomplete="password" type="password"
+                <input id="reg_password" name="reg_password" required autofocus autocomplete="reg_password" type="password"
                        class="form-control" aria-label="Sizing example input"
                        aria-describedby="inputGroup-sizing-default">
             </div>

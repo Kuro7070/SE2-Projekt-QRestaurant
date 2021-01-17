@@ -1,7 +1,7 @@
 <form action="{{ route('update') }}" method="POST" role="form" enctype="multipart/form-data">
     @csrf
     <div class="form-group row">
-        <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+        <label for="name" class="col-md-4 col-form-label text-md-right">Vorname</label>
         <div class="col-md-6">
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -11,8 +11,25 @@
                     </span>
 
                 </div>
-                <input id="name" type="text" class="form-control" name="name"
-                       value="{{ old('name', auth()->user()->name) }}">
+                <input id="vorname" type="text" class="form-control" name="vorname"
+                       value="{{ old('vorname', auth()->user()->vorname) }}">
+
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="name" class="col-md-4 col-form-label text-md-right">Nachname</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <div class="input-group-prepend">
+
+                    <span class="input-group-text">
+                        <i class="fas fa-user"></i>
+                    </span>
+
+                </div>
+                <input id="nachname" type="text" class="form-control" name="nachname"
+                       value="{{ old('nachname', auth()->user()->nachname) }}">
 
             </div>
         </div>
@@ -52,6 +69,23 @@
         </div>
     </div>
     <div class="form-group row">
+        <label for="name" class="col-md-4 col-form-label text-md-right">Ort</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <div class="input-group-prepend">
+
+                    <span class="input-group-text">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
+
+                </div>
+                <input id="ort" type="text" class="form-control" name="ort"
+                       value="{{ old('ort', auth()->user()->ort) }}">
+
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
         <label for="name" class="col-md-4 col-form-label text-md-right">PLZ</label>
         <div class="col-md-6">
             <div class="input-group">
@@ -80,10 +114,27 @@
 
                 </div>
                 <input id="email" type="text" class="form-control" name="email"
-                       value="{{ old('email', auth()->user()->email) }}" disabled>
+                       value="{{ old('reg_email', auth()->user()->reg_email) }}" disabled>
 
             </div>
 
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="name" class="col-md-4 col-form-label text-md-right">Telefon</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <div class="input-group-prepend">
+
+                    <span class="input-group-text">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
+
+                </div>
+                <input id="telefonnummer" type="text" class="form-control" name="telefonnummer"
+                       value="{{ old('telefonnummer', auth()->user()->telefonnummer) }}">
+
+            </div>
         </div>
     </div>
 
@@ -114,7 +165,8 @@
                     </span>
 
                 </div>
-                <input style="border-right: 2px solid #e9ecef;" id="new-password" data-indicator="pwindicator" type="password" class="form-control"
+                <input style="border-right: 2px solid #e9ecef;" id="new-password" data-indicator="pwindicator"
+                       type="password" class="form-control"
                        name="new-password">
 
                 <div class="input-group-prepend">
@@ -124,7 +176,8 @@
                     </span>
 
                 </div>
-                <input style="border-left: 2px solid #e9ecef;" id="new-password-confirm" type="password" class="form-control" name="new-password-confirm">
+                <input style="border-left: 2px solid #e9ecef;" id="new-password-confirm" type="password"
+                       class="form-control" name="new-password-confirm">
 
                 <div class="input-group-append">
 
@@ -174,3 +227,45 @@
         </div>
     </div>
 </form>
+<div class="form-group row mb-0 mt-5">
+    <div class="col-md-8 offset-md-4">
+
+        <button type="button" class="btn btn-danger" data-toggle="modal" id="open-remove-account-modal-button"
+                data-href="{{route('delete')}}" data-target="#remove-account-modal">
+            Account löschen<i class="fas fa-trash-alt"></i>
+        </button>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="remove-account-modal" tabindex="-1" role="dialog" data-backdrop="static"
+     aria-labelledby="my-modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-12">
+                    <div class="modal-text"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <form action="{{ route('delete') }}" method="POST" role="form">
+                    @csrf
+                    <button type="submit" class="btn btn-danger" id="remove-account-button">
+						<i class="fas fa-trash-alt"></i>
+                        Löschen
+                        <div class="spinner-border spinner-grow-sm" role="status" id="remove-account-spinner">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </button>
+                </form>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+</div>
