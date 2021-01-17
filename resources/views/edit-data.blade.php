@@ -1,7 +1,8 @@
-<form action="{{ route('update') }}" method="POST" role="form" enctype="multipart/form-data">
-    @csrf
+<div class="card bg-transparent-black">
 
-    <div class="card bg-transparent-black">
+    <form action="{{ route('update') }}" method="POST" role="form" enctype="multipart/form-data">
+        @csrf
+
         <div class="card-body" size="">
 
             <div class="form-group row">
@@ -184,7 +185,8 @@
                     </span>
 
                         </div>
-                        <input style="max-width: 50%;border-right: 2px solid #e9ecef;" id="new-password" data-indicator="pwindicator"
+                        <input style="max-width: 50%;border-right: 2px solid #e9ecef;" id="new-password"
+                               data-indicator="pwindicator"
                                type="password" class="form-control"
                                name="new-password">
                     </div>
@@ -222,10 +224,10 @@
                     </button>
                 </div>
             </div>
-            @include('speisekarte-upload')
         </div>
-    </div>
-</form>
+    </form>
+    @include('speisekarte-upload')
+</div>
 
 
 <div class="modal fade bd-example-modal-lg" id="remove-account-modal" tabindex="-1" role="dialog" data-backdrop="static"
