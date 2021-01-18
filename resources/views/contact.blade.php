@@ -14,25 +14,49 @@
                     </div>
                     <div class="row justify-content-start">
                         <div class="col-lg-6 col-md-6 col-sm-12 form-group text-white w-100">
-                            <input type="text" class="rounder-borders w-100 form-control-lg"
-                                   placeholder="Name" name="contact_name" id="contact_name" @auth readonly="readonly" value="{{ old('name', auth()->user()->name) }}" @endif>
-                            <span class="invalid-feedback" role="alert"><strong id="errors-contact_name"></strong></span>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="rounder-borders w-100 form-control-lg"
+                                       placeholder="Name" name="contact_name" id="contact_name" @auth readonly="readonly" value="{{ old('name', auth()->user()->name) }}" @endif>
+                                <span class="invalid-feedback" role="alert"><strong id="errors-contact_name"></strong></span>
+                            </div>
+
 
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 form-group text-white w-100">
-                            <input type="text" class="rounder-borders w-100 form-control-lg"
-                                   placeholder="Email" name="contact_email" id="contact_email" @auth readonly="readonly" value="{{ old('name', auth()->user()->email) }}" @endif>
-                            <span class="invalid-feedback" role="alert"><strong id="errors-contact_email"></strong></span>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="rounder-borders w-100 form-control-lg"
+                                       placeholder="Email" name="contact_email" id="contact_email" @auth readonly="readonly" value="{{ old('name', auth()->user()->email) }}" @endif>
+                                <span class="invalid-feedback" role="alert"><strong id="errors-contact_email"></strong></span>
+                            </div>
+
                         </div>
                     </div>
                     <div class="row justify-content-start">
                         <div class="col-12">
-                            <div class="form-group text-white h-100 pb-3">
-                        <textarea style="resize: none"
-                                  class="rounder-borders h-100 w-100 form-control-lg textarea"
-                                  placeholder="Nachricht" name="contact_nachricht" id="contact_nachricht"></textarea>
-                                <span class="invalid-feedback" role="alert"><strong
-                                            id="errors-contact_nachricht"></strong></span>
+                            <div class="form-group text-white h-100 w-100 pb-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </span>
+                                    </div>
+                                    <textarea style="resize: none"
+                                              class="rounder-borders h-100 w-100 form-control-lg textarea"
+                                              placeholder="Nachricht" name="contact_nachricht" id="contact_nachricht"></textarea>
+                                    <span class="invalid-feedback" role="alert"><strong
+                                                id="errors-contact_nachricht"></strong></span>
+                                </div>
+
                             </div>
                         </div>
 

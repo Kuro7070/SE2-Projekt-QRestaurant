@@ -13,15 +13,20 @@ class CreateKundeCoronaTable extends Migration
      */
     public function up()
     {
-        Schema::create('kunde_corona', function (Blueprint $table) {
+        Schema::create('customers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('email')->unique()->nullable(false);
+            $table->string('email')->nullable(false);
             $table->string('nachname')->nullable(false);
             $table->string('vorname')->nullable(false);
-            $table->string('adresse')->nullable(false);
+            $table->string('street')->nullable(false);
+            $table->string('streetno')->nullable(false);
+            $table->string('ort')->nullable(false);
+            $table->string('zip')->nullable(false);
             $table->string('telefonnummer')->nullable(false);
-            $table->timestamp('datum')->nullable(false);
-            $table->string('verbleib')->nullable(false);
+            $table->string('ankunft')->nullable(false);
+            $table->string('abreise')->nullable(false);
+            $table->integer('verbleib')->nullable(false);
+            $table->timestamps();
 
         });
     }
@@ -33,6 +38,6 @@ class CreateKundeCoronaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kunde_corona');
+        Schema::dropIfExists('customers');
     }
 }

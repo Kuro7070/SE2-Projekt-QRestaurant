@@ -39,6 +39,7 @@ Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload
 Route::any('/remove-file/{id}', [FileUpload::class, 'destroy'])->name('removePDF');
 
 Route::post('/contact',[\App\Http\Controllers\ContactController::class, 'saveContact'])->name('kontakt');
+Route::post('/covid',[\App\Http\Controllers\CustomerController::class, 'saveCoronaContact'])->name('corona');
 Route::any('/update',[\App\Http\Controllers\UserController::class, 'updateData'])->name('update');
 Route::any('/destroyPic',[\App\Http\Controllers\UserController::class, 'destroyProfilePic'])->name('destroyPic');
 

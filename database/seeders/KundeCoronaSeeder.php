@@ -18,13 +18,17 @@ class KundeCoronaSeeder extends Seeder
         //email, nachname, vorname
         // adresse, telefonnumer, datum
         // verlbeib
-        DB::table('kunde_corona')->insert([
+        DB::table('customers')->insert([
             'email'         =>  'patrick@franzose.de',
             'nachname'      => 'zike',
             'vorname'       =>  'patrick',
-            'adresse'       =>  'JKDAStraße 20',
+            'street'       =>  'JKDAStraße',
+            'streetno'       =>  '20',
+            'ort'       =>  'Hamburg',
+            'zip' =>  '761',
             'telefonnummer' =>  '7654321',
-            'datum' =>  now(),
+            'ankunft' =>  '20:15',
+            'abreise' =>  '23:15',
             'verbleib' =>  '180',
         ]);
     }

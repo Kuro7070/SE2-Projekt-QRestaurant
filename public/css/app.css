@@ -16298,7 +16298,7 @@ textarea.rounder-borders {
   opacity: 1;
 }
 
-#contact-spinner, #remove-pdf-spinner, #upload-spinner, #pdfs-backdrop {
+#contact-spinner,#corona-spinner, #remove-pdf-spinner, #upload-spinner, #pdfs-backdrop, #remove-account-spinner {
   display: none;
 }
 
@@ -16367,13 +16367,21 @@ textarea.rounder-borders {
   text-align: center;
 }
 
-.register_input_div input{
+.register_input_div input, .register_input_div_corona input{
   padding: 5px;
   border: none;
   background-color: #3453;
   font-size: 23px;
   border-bottom: 4px solid black;
   outline: none;
+}
+
+.register_input_div_corona div{
+  width: 100px;
+}
+
+.register_input_div_corona span{
+  width: 100%;
 }
 
 .register_input_div div{

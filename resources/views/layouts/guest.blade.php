@@ -84,6 +84,10 @@
     <?php
     session()->remove('deleteSuccess');
     ?>
+
+    <div class="row justify-content-center align-content-center">
+        @include('corona')
+    </div>
     @include('register')
     <div id="trigger1"></div>
     <div id="reveal1" class="row h-100 justify-content-center align-content-center">
@@ -113,6 +117,7 @@
 <script src="../resources/js/ScrollMagic.min.js"></script>
 <script src="../resources/js/reveal-content.js"></script>
 <script src="../resources/js/contact.js"></script>
+<script src="../resources/js/corona.js"></script>
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {
