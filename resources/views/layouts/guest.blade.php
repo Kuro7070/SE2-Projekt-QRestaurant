@@ -101,10 +101,21 @@
     </div>
 
 
-    <div class="row h-25 bg-light">
-        {{--    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})--}}
-        <span class="text-white">&copy; 2020 <span class="font-weight-bold">QR</span>estaurant</span>
-    </div>
+        <div class="row h-40 bg-dark">
+            <span class="text-white">&copy; 2021 <span class="font-weight-bold">QR</span>estaurant</span>
+            <div class="container">
+                <div class="sidebar-column col-md-4">
+                    <aside id="text-1" class="text-white"><h3 class="widget-title">IMPRESSUM</h3>			<div class="textwidget"><p>Mister QRest<br>
+                                QRest Straße 20<br>
+                                22012 Hamburg</p>
+                            <p>Telefon &nbsp;+49 123 4567 8910</p>
+                            <p><strong>MAIL&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong><a href="mailto:qrest@qrest.com">qrest@qrest.com</a></p>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+        </div>
 
 </main>
 <script src="../resources/js/jquery-3.5.1.js"></script>
