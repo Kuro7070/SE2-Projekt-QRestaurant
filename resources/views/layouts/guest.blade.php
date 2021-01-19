@@ -84,6 +84,8 @@
     <?php
     session()->remove('deleteSuccess');
     ?>
+
+
     @include('register')
     <div id="trigger1"></div>
     <div id="reveal1" class="row h-100 justify-content-center align-content-center">

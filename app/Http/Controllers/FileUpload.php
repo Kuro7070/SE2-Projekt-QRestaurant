@@ -6,6 +6,7 @@ use App\Models\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -28,9 +29,10 @@ class FileUpload extends Controller
 
         if ($request->file()) {
             $fileName = time() . '_' . $request->file->getClientOriginalName();
-            $filePath = $request->file('file')->storeAs('uploads', uniqid(). \Illuminate\Support\Facades\File::extension($fileName), 'public');
+            $unique=uniqid().'.'. \Illuminate\Support\Facades\File::extension($fileName);
+            $filePath = $request->file('file')->storeAs('uploads', $unique, 'public');
 
-            $fileModel->name         = time() . '_' . $request->file->getClientOriginalName();
+            $fileModel->name         = $unique;
             $fileModel->file_path    = '/storage/' . $filePath;
             $fileModel->gastronom_id = Auth::id();
             $fileModel->save();
@@ -56,7 +58,9 @@ class FileUpload extends Controller
                 'qr'   => self::getQRUri(asset($menus->file_path)),
                 'path' => asset($menus->file_path),
                 'id'   => $menus->id,
-                'name'   => $menus->name
+                'name'   => $menus->name,
+                'href'   => route('showpdf', $menus->name),
+                'gastronom' => $menus->gastronom_id
             ]);
         }
         return array_reverse($codes);
@@ -64,6 +68,24 @@ class FileUpload extends Controller
 
         return $codes;
     }
+
+//    public static function getSinglePDF($filename)
+//    {
+//        $codes = [];
+//        if(Auth::check()){
+//            $pdf = File::where('name','=','60074cd541e98.pdf')->firstOrFail();
+//            array_push($codes, [
+//                'qr'   => self::getQRUri(asset($pdf->file_path)),
+//                'path' => asset($pdf->file_path),
+//                'id'   => $pdf->id,
+//                'name'   => $pdf->name,
+//                'href'   => route('showpdf', $pdf->name)
+//            ]);
+//        return $codes;
+//        }
+//
+//        return null;
+//    }
 
     public static function destroy(Request $request)
     {
