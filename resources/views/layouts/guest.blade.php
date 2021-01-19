@@ -76,7 +76,7 @@
     @if(session()->has('deleteSuccess'))
         <div class="alert alert-success w-50 fixed-bottom mx-auto alert-dismissible fade show" role="alert">
             <strong>
-                Dein Account wurder vollständig aus dem System gelöscht.</strong> Schade 😢
+                Dein Account wurde vollständig aus dem System gelöscht.</strong> Schade 😢
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
         </div>
