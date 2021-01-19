@@ -1,3 +1,4 @@
+let customer_gastronom_id = $('#customer_gastronom_id');
 let customer_email = $('#customer_email');
 let customer_vorname = $('#customer_vorname');
 let customer_nachname = $('#customer_nachname');
@@ -14,7 +15,6 @@ let coronaButtonStatus = $('#customer-button-status');
 let coronaSuccessBar = '<div class="alert alert-success w-50 fixed-bottom mx-auto alert-dismissible fade show" role="alert">Vielen Dank für das kontaktlose Hinterlegen deiner Daten. <strong>Bleib bitte weiterhin gesund!</strong><br>Möchtest du weitere Personen eintragen? <br><button onclick="focusVorname()" type="button" class="btn btn-dark" data-dismiss="alert" aria-label="Close">Ja</button> <button onclick="collapseForm()" type="button" class="btn btn-light" data-dismiss="alert" aria-label="Close">Nein</button> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
 
 $('#customer-form').submit(function (e) {
-    console.log("hi");
     e.preventDefault();
     document.getElementById('customer-spinner').style.display = "inline-block";
     document.getElementById('customer-submit-button').setAttribute('disabled', '');
@@ -24,6 +24,7 @@ $('#customer-form').submit(function (e) {
         method: "POST",
         url: $("#customer-submit-button").data('href'),
         data: {
+            customer_gastronom_id: customer_gastronom_id.val(),
             customer_email: customer_email.val(),
             customer_nachname: customer_nachname.val(),
             customer_vorname: customer_vorname.val(),
@@ -39,7 +40,6 @@ $('#customer-form').submit(function (e) {
         },
         success: function (data) {
             document.getElementById('customer-submit-button').removeAttribute('disabled');
-            clearInputsAndErrors();
             document.getElementById('customer-spinner').style.display = "none";
             customer_email.val("");
             customer_vorname.val("");
@@ -56,7 +56,7 @@ $('#customer-form').submit(function (e) {
             document.getElementById('customer-button-status').style.display = "inline-block";
             coronaButtonStatus.addClass('fa-check').addClass('text-success');
             $('#collapseCorona').collapse();
-            $('#main').append(coronaSuccessBar);
+            $('#pdfmain').append(coronaSuccessBar);
         },
         error: function (xhr, status, error) {
             document.getElementById('customer-submit-button').removeAttribute('disabled');

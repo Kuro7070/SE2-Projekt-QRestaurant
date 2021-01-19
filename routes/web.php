@@ -33,7 +33,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('users/{userid}',[\App\Http\Controllers\UserController::class, 'getUserById']);
 
 });
-
+Route::get('menu/{id}', function (){
+    return view('show-pdf');
+})->name('showpdf');
 
 Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
 Route::any('/remove-file/{id}', [FileUpload::class, 'destroy'])->name('removePDF');

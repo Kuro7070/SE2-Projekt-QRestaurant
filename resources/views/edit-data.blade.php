@@ -114,7 +114,7 @@
 
                 </div>
                 <input id="email" type="text" class="form-control" name="email"
-                       value="{{ old('reg_email', auth()->user()->reg_email) }}" disabled>
+                       value="{{ old('email', auth()->user()->email) }}" disabled>
 
             </div>
 

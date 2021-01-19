@@ -19,7 +19,8 @@ class Customer extends Model
         "ankunft",
         "abreise",
         "telefonnummer",
-        "verbleib"
+        "verbleib",
+        "customers_id_foreign"
     ];
 
 }

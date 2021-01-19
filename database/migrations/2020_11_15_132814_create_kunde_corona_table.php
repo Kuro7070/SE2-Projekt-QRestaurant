@@ -15,6 +15,8 @@ class CreateKundeCoronaTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->foreignId('gastronom_id')->nullable()->references('id')->on('users')->nullOnDelete();
+
             $table->string('email')->nullable(false);
             $table->string('nachname')->nullable(false);
             $table->string('vorname')->nullable(false);
@@ -29,6 +31,7 @@ class CreateKundeCoronaTable extends Migration
             $table->timestamps();
 
         });
+
     }
 
     /**

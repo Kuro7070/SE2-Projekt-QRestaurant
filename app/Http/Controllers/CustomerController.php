@@ -17,7 +17,7 @@ class CustomerController extends Controller
             $request->customer_departure_minutes, null, null);
 
         $customer = new Customer;
-
+        $customer->gastronom_id       = $request->customer_gastronom_id;
         $customer->vorname       = $request->customer_vorname;
         $customer->nachname      = $request->customer_nachname;
         $customer->street        = $request->customer_street;
@@ -32,7 +32,7 @@ class CustomerController extends Controller
 
         $customer->save();
 
-        return back()->with('contact-success', '');
+        return true;
     }
 
 }

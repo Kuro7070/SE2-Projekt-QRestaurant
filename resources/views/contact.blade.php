@@ -15,13 +15,8 @@
                     <div class="row justify-content-start">
                         <div class="col-lg-6 col-md-6 col-sm-12 form-group text-white w-100">
                             <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </span>
-                                </div>
                                 <input type="text" class="rounder-borders w-100 form-control-lg"
-                                       placeholder="Name" name="contact_name" id="contact_name" @auth readonly="readonly" value="{{ old('name', auth()->user()->name) }}" @endif>
+                                       placeholder="Name" name="contact_name" id="contact_name" @auth readonly="readonly" value="{{ old('vorname', auth()->user()->vorname) . ' ' .old('nachname', auth()->user()->nachname) }}" @endif>
                                 <span class="invalid-feedback" role="alert"><strong id="errors-contact_name"></strong></span>
                             </div>
 
@@ -29,13 +24,8 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 form-group text-white w-100">
                             <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </span>
-                                </div>
                                 <input type="text" class="rounder-borders w-100 form-control-lg"
-                                       placeholder="Email" name="contact_email" id="contact_email" @auth readonly="readonly" value="{{ old('name', auth()->user()->email) }}" @endif>
+                                       placeholder="Email" name="contact_email" id="contact_email" @auth readonly="readonly" value="{{ old('email', auth()->user()->email) }}" @endif>
                                 <span class="invalid-feedback" role="alert"><strong id="errors-contact_email"></strong></span>
                             </div>
 
@@ -45,11 +35,6 @@
                         <div class="col-12">
                             <div class="form-group text-white h-100 w-100 pb-3">
                                 <div class="input-group">
-                                    <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </span>
-                                    </div>
                                     <textarea style="resize: none"
                                               class="rounder-borders h-100 w-100 form-control-lg textarea"
                                               placeholder="Nachricht" name="contact_nachricht" id="contact_nachricht"></textarea>
@@ -63,7 +48,7 @@
                     </div>
                     <div class="row justify-content-end pr-3">
                         <button type="submit" class="btn border-0 bg-button-color" data-href="{{route('kontakt')}}"
-                                data-token="{{csrf_token()}}" id="contact-submit-button">
+                                data-token="{{csrf_token()}}" data-auth="{{\Illuminate\Support\Facades\Auth::check()}}" id="contact-submit-button">
                             Nachricht senden
                             <div class="spinner-border spinner-grow-sm" role="status" id="contact-spinner">
                                 <span class="sr-only">Loading...</span>

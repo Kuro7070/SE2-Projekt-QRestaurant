@@ -130,7 +130,7 @@
         if ($('#new-password').val()) {
             $('#pwindicator').show();
             $('#new-password').pwstrength();
-        } else{
+        } else {
             $('#pwindicator').hide();
 
         }
@@ -139,7 +139,7 @@
         if ($('#new-password').val() === $('#new-password-confirm').val()) {
             $('#pw-confirm').append(pwConfirm);
             $('#pw-confirm').show();
-        }else{
+        } else {
             $('#pw-confirm').empty();
             $('#pw-confirm').hide();
 
@@ -151,7 +151,7 @@
         if ($('#new-password').val() === $('#new-password-confirm').val()) {
             $('#pw-confirm').append(pwConfirm);
             $('#pw-confirm').show();
-        }else{
+        } else {
             $('#pw-confirm').empty();
             $('#pw-confirm').hide();
 
@@ -160,8 +160,9 @@
 </script>
 <script>
     $('#my-modal').on('show.bs.modal', function (event) {
-        var modalTitle = $(event.relatedTarget).data('name') + " löschen?";
-        var modalText = "Möchtest Du <strong>" + $(event.relatedTarget).data('name') + "</strong> wirklich löschen?";
+        var modalTitle = "Speisekarte löschen?";
+        var path = $("#open-remove-pdf-modal-button").data('path');
+        let modalText = 'Möchtest Du diese Speisekarte wirklich löschen? <br> <object class="h-100 w-100" data="' + path + '" type="application/pdf"></object>';
 
         $(this).find(".modal-title").text(modalTitle);
         $(this).find(".modal-text").html(modalText);

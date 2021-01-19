@@ -6,7 +6,7 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="qr-container">
-                <a href="{{$codes['path']}}">
+                <a href="{{$codes['href']}}" target="_blank">
                     <img class="w-100" src="{{$codes['qr']}}" alt="QR-Code">
                 </a>
                 <div class="overlay">

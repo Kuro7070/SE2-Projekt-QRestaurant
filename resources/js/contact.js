@@ -26,8 +26,10 @@ $('#contact-form').submit(function (e) {
             document.getElementById('contact-submit-button').removeAttribute('disabled');
             clearInputsAndErrors();
             document.getElementById('contact-spinner').style.display = "none";
-            name.val("");
-            email.val("");
+            if ($("#contact-submit-button").data('auth') !== 1) {
+                name.val("");
+                email.val("");
+            }
             nachricht.val("");
             document.getElementById('contact-button-status').style.display = "inline-block";
             contactButtonStatus.addClass('fa-check').addClass('text-success');

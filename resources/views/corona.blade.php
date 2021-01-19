@@ -1,7 +1,7 @@
-<div id="corona" class="col-sm-12 col-md-9 col-lg-6">
+<div id="corona" class="w-100">
 
     <div class="card">
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCorona"
+        <button class="btn btn-primary m-0 w-100" type="button" data-toggle="collapse" data-target="#collapseCorona"
                 aria-expanded="false" aria-controls="collapseCorona">
             <i class="fas fa-virus"></i>
             Jetzt Corona-Kontaktdaten digital hinterlegen!
@@ -186,6 +186,7 @@
                             </button>
                         </div>
                     </div>
+                    <input id="customer_gastronom_id" name="customer_gastronom_id" type="text" value="{{$data['gastronom_id']}}" hidden>
                 </form>
             </div>
         </div>
