@@ -1,37 +1,18 @@
 <div id="tutorials" class="col-sm-12 col-md-9 col-lg-6">
 
-    <div class="card bg-success">
+    <div class="card bg-transparent-black ">
         <div class="card-body">
-            <h2 class="card-title">Tutorials</h2>
-            {{--                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>--}}
-            <p class="card-text">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-                ipsum dolor sit amet.
 
-                @for ($i = 0; $i < 5; $i++)
-                    <br>{{$i}}. Hallo Welt!
-                @endfor
+            <p class="card-text mb-4 more-readable">
+                Um die großartigen Features von QRestaurant zu nutzen, müssen Sie nur ein paar einfache Aufgaben erfüllen. <br>
+                Zuerst müssen Sie sich auf der Hauptseite registrieren.
+                Falls Sie bereits ein Konto haben, können Sie sich einfach einloggen. <br>
+                Nach der Registrierung werden Sie auf Ihr Profil weitergeleitet.
+                Hier können Sie nun alle Ihre Daten ändern, wann immer Sie wollen.
+                Nun sind Sie in der Lage Ihre Speisekarten hochzuladen. Sie können auch diese beliebig bearbeiten. <br>
+                Sollten Sie irgendwelche Probleme haben, scheuen Sie sich nicht uns zu kontaktieren.
+                Ganz unten auf unsere Website finden Sie ein Kontaktformular.
             </p>
-
-            <div class="row">
-                <div class="col-6">
-                    <a href="{{ url('login') }}">
-                        <button type="button" style="width: 100%" class="btn btn-outline-success">Login</button>
-                    </a>
-                    <p class="text-muted">Bereits registriert?</p>
-                </div>
-                <div class="col-6">
-                    <a href="{{ url('register') }}">
-                        <button type="button" style="width: 100%" class="btn btn-primary">Registrieren</button>
-                    </a>
-                    <p class="text-muted">Lorem ipsum dolor sit amet?</p>
-                </div>
-            </div>
 
         </div>
     </div>

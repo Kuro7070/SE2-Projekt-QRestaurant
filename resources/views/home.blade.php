@@ -8,7 +8,8 @@
             <div class="card h-100 w-100 position-relative" style="border-radius: 20px">
                 <div class="h-75">
                 </div>
-                <div class="h-25 text-center text-black-50" style="font-size: 32px ">
+                <div class="h-25 text-center text-black-50 img-tutorial" style="font-size: 32px ">
+                    <img src = "{{'../img/tutorial-anmelden.png'}}"  alt="Tutorial: Anmelden"/>
                     Anmelden
                 </div>
             </div>
@@ -18,7 +19,8 @@
                 <div class="h-75">
                 </div>
                 <div class="h-25 text-center text-black-50" style="font-size: 32px ">
-                    QR Code hochladen
+                    <img src = "{{ asset('/images/tutorial-menu-hochladen.png') }}"  alt="Tutorial: Menu hochladen"/>
+                    Menu hochladen
                 </div>
             </div>
         </div>
@@ -27,6 +29,7 @@
                 <div class="h-75">
                 </div>
                 <div class="h-25 text-center text-black-50" style="font-size: 32px ">
+                    <img src = "../img/tutotial-fertiger-qr-code.png"  alt="Tutorial: Fertiger QR-Code"/>
                     QR Code generieren
                 </div>
             </div>
