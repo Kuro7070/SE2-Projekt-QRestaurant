@@ -1,6 +1,6 @@
 <form action="{{ route('update') }}" method="POST" role="form" enctype="multipart/form-data">
     @csrf
-    <div class="form-group row">
+    <div class="form-group row text-white">
         <label for="name" class="col-md-4 col-form-label text-md-right">Vorname</label>
         <div class="col-md-6">
             <div class="input-group">
@@ -13,11 +13,10 @@
                 </div>
                 <input id="vorname" type="text" class="form-control" name="vorname"
                        value="{{ old('vorname', auth()->user()->vorname) }}">
-
             </div>
         </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row text-white">
         <label for="name" class="col-md-4 col-form-label text-md-right">Nachname</label>
         <div class="col-md-6">
             <div class="input-group">
@@ -34,7 +33,7 @@
             </div>
         </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row text-white">
         <label for="name" class="col-md-4 col-form-label text-md-right">Straße</label>
         <div class="col-md-6">
             <div class="input-group">
@@ -51,7 +50,7 @@
             </div>
         </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row text-white">
         <label for="name" class="col-md-4 col-form-label text-md-right">Nr.</label>
         <div class="col-md-6">
             <div class="input-group">
@@ -68,7 +67,7 @@
             </div>
         </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row text-white">
         <label for="name" class="col-md-4 col-form-label text-md-right">Ort</label>
         <div class="col-md-6">
             <div class="input-group">
@@ -85,7 +84,7 @@
             </div>
         </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row text-white">
         <label for="name" class="col-md-4 col-form-label text-md-right">PLZ</label>
         <div class="col-md-6">
             <div class="input-group">
@@ -102,7 +101,7 @@
             </div>
         </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row text-white">
         <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
         <div class="col-md-6">
             <div class="input-group">
@@ -120,7 +119,7 @@
 
         </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row text-white">
         <label for="name" class="col-md-4 col-form-label text-md-right">Telefon</label>
         <div class="col-md-6">
             <div class="input-group">
@@ -138,7 +137,7 @@
         </div>
     </div>
 
-    <div class="form-group row">
+    <div class="form-group row text-white">
         <label for="name" class="col-md-4 col-form-label text-md-right">Altes Passwort</label>
         <div class="col-md-6">
             <div class="input-group">
@@ -154,7 +153,7 @@
         </div>
     </div>
 
-    <div class="form-group row">
+    <div class="form-group row text-white">
         <label for="name" class="col-md-4 col-form-label text-md-right">Neues Passwort</label>
         <div class="col-md-6">
             <div class="input-group">
