@@ -1,5 +1,17 @@
 <form action="{{ route('update') }}" method="POST" role="form" enctype="multipart/form-data">
     @csrf
+
+    <div class="form-group row ml-3">
+        <div class="photo-container">
+            <img class="rounded profile-picture"
+                 src="{{\App\Http\Controllers\UserController::getProfilePic()}}">
+            <div class="overlay">
+                <button type="button" class="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        </div>
+    </div>
     <div class="form-group row text-white">
         <label for="name" class="col-md-4 col-form-label text-md-right">Vorname</label>
         <div class="col-md-6">
@@ -194,18 +206,8 @@
     </div>
 
 
-    <div class="form-group row">
-        <div class="photo-container">
-            <img class="rounded profile-picture"
-                 src="{{\App\Http\Controllers\UserController::getProfilePic()}}">
-            <div class="overlay">
-                <button type="button" class="btn btn-danger">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="form-group row">
+
+    <div class="form-group row text-white">
         <label for="profile_image" class="col-md-4 col-form-label text-md-right">Profilbild</label>
         <div class="col-md-6">
             <div class="input-group">
@@ -220,22 +222,17 @@
             </div>
         </div>
     </div>
-    <div class="form-group row mb-0 mt-5">
+    <div class="form-group row mb-5 mt-5 ">
         <div class="col-md-8 offset-md-4">
             <button type="submit" class="btn btn-primary">Speichern</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" id="open-remove-account-modal-button"
+                    data-href="{{route('delete')}}" data-target="#remove-account-modal">
+                Account löschen <i class="fas fa-trash-alt"></i>
+            </button>
         </div>
     </div>
+
 </form>
-<div class="form-group row mb-0 mt-5">
-    <div class="col-md-8 offset-md-4">
-
-        <button type="button" class="btn btn-danger" data-toggle="modal" id="open-remove-account-modal-button"
-                data-href="{{route('delete')}}" data-target="#remove-account-modal">
-            Account löschen<i class="fas fa-trash-alt"></i>
-        </button>
-    </div>
-</div>
-
 <div class="modal fade bd-example-modal-lg" id="remove-account-modal" tabindex="-1" role="dialog" data-backdrop="static"
      aria-labelledby="my-modal" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -268,3 +265,4 @@
         </div>
     </div>
 </div>
+
