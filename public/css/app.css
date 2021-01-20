@@ -16298,7 +16298,7 @@ textarea.rounder-borders {
   opacity: 1;
 }
 
-#contact-spinner,#corona-spinner, #remove-pdf-spinner, #upload-spinner, #pdfs-backdrop, #remove-account-spinner {
+#contact-spinner,#customer-spinner, #remove-pdf-spinner, #upload-spinner, #pdfs-backdrop, #remove-account-spinner {
   display: none;
 }
 
@@ -16409,3 +16409,79 @@ textarea.rounder-borders {
 .register_caption_div {
   align-content: center;
 }
+
+#display_profile ,#display_profile .body_div , #display_profile .box{
+  min-height: 100%;
+  width: 100%;
+}
+
+#display_profile .body_div{
+  padding: 5% 15%;
+}
+
+#display_profile .displayarea{
+  padding: 20px 40px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.6) !important;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+#display_profile .toprow, #display_profile .bottmomrow{
+  width: 100%;
+  height: 50%;
+  max-height: 50%;
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+#display_profile .toprow .colleft{
+  float: left;
+  width: calc(100% - 250px);
+  height: 100%;
+}
+
+#display_profile .toprow .colright{
+  float: left;
+  width: 250px;
+  height: 100%;
+}
+
+#display_profile .toprow .colleft div {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+#display_profile .name_div span , #display_profile .email_div span{
+  font-size: 30px;
+  color: white;
+}
+
+#display_profile.name_div span,#display_profile .profil_text {
+  font-weight: 900;
+  color: white;
+}
+
+#display_profile .profil_text{
+  font-size: 50px;
+}
+
+#display_profile .profil_bearbeiten_div a {
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#display_profile .profil_bearbeiten_div a:hover{
+  color: gray;
+}
+
+#display_profile .picture_div {
+  height: 250px;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+

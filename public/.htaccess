@@ -1,19 +1,28 @@
+<IfModule mod_headers.c>
+    # Default: Prod
+    SetEnvIf Server_Addr "(.*)" ALLOW_ORIGIN=http://localhost
+    # Develop: Homestead
+    SetEnvIf Server_Addr "127.0.0.1" ALLOW_ORIGIN=http://localhost:4200
+    # Set Allow-Header according to Environment using variable "ALLOW_ORIGIN" defined above
+    Header always set Access-Control-Allow-Origin "expr=%{ENV:ALLOW_ORIGIN}"
+    Header always set Access-Control-Allow-Credentials "true"
+    Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
+    Header always set Access-Control-Max-Age "1000"
+    Header always set Access-Control-Allow-Headers "x-requested-with, content-disposition, Content-Disposition, Content-Type, origin, authorization, accept, client-security-token, Accept-Encoding, clientid, token"
+    Header always set Access-Control-Expose-Headers: "Content-Disposition"
+</IfModule>
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
-
     RewriteEngine On
-
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
-
     # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
