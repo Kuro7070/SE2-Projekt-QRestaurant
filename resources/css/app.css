@@ -181,6 +181,14 @@ textarea.rounder-borders {
     color: #fff !important;
 }
 
+.img-tutorial {
+    width: 100%;
+}
+
+.more-readable {
+    line-height: 1.6rem;
+}
+
 /* END OWN CSS CHANGES -------------------------------- */
 
 .sidenav {
