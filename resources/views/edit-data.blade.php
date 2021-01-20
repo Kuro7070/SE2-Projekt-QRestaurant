@@ -11,25 +11,22 @@
                         </div>
 
                         <div class="name_div">
-                            <span>
-                                Max Mustermann
-                            </span>
+                            <span>{{ old('vorname', auth()->user()->vorname). ' ' .old('nachname', auth()->user()->nachname) }}</span>
+
                         </div>
 
                         <div class="email_div">
-                            <span>
-                                max.mustermann@mail.com
-                            </span>
+                            <span>{{ old('email', auth()->user()->email) }}</span>
                         </div>
                     </div>
 
                     <div class="colright">
-                        <div class="picture_div">
-
-                        </div>
+                        <img class="rounded profile-picture picture_div"
+                             src="{{\App\Http\Controllers\UserController::getProfilePic()}}">
 
                         <div class="profil_bearbeiten_div">
-                            <a>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button"
+                               aria-expanded="false" aria-controls="collapseExample">
                                 Profil Bearbeiten
                             </a>
                         </div>
@@ -39,8 +36,12 @@
                     @include('speisekarte-upload')
                 </div>
             </div>
+            <div class="collapse" id="collapseExample">
+                @include('profil-bearbeiten')
+            </div>
         </div>
     </div>
 
 </div>
+
 

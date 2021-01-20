@@ -392,7 +392,7 @@ textarea.rounder-borders {
 
 
 #display_profile ,#display_profile .body_div , #display_profile .box{
-    height: 100%;
+    min-height: 100%;
     width: 100%;
 }
 
@@ -415,6 +415,7 @@ textarea.rounder-borders {
     height: 50%;
     max-height: 50%;
     overflow: hidden;
+    padding-top: 20px;
 }
 
 #display_profile .toprow .colleft{
@@ -452,11 +453,17 @@ textarea.rounder-borders {
     color: white;
     font-size: 15px;
     text-align: center;
+    cursor: pointer;
+}
+
+#display_profile .profil_bearbeiten_div a:hover{
+    color: gray;
 }
 
 #display_profile .picture_div {
     height: 250px;
     width: 250px;
-    background-color: white;}
+    margin-bottom: 20px;
+    }
 
 
